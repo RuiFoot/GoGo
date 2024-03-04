@@ -1,0 +1,398 @@
+//
+// Custom forms
+// --------------------------------------------------
+//
+// Password visibility toggle
+
+.password-toggle {
+  position: relative;
+  .form-control {
+    padding-right: $font-size-base + ($spacer * 2);
+  }
+}
+
+.password-toggle-btn {
+  position: absolute;
+  top: 50%;
+  right: .625rem;
+  margin-bottom: 0;
+  padding: $spacer * .5;
+  transform: translateY(-50%);
+  font-size: $btn-font-size-lg;
+  line-height: 1;
+  cursor: pointer;
+
+  .password-toggle-indicator {
+    transition: color .2s ease-in-out;
+    color: $input-color;
+    font: {
+      family: $icons-font-family;
+      style: normal;
+    }
+    &::before { content: $ci-eye; }
+    &:hover { color: $primary; }
+  }
+
+  .password-toggle-check {
+    position: absolute;
+    left: 0;
+    z-index: -1;
+    width: 1rem;
+    height: 1.25rem;
+    opacity: 0;
+
+    &:checked ~ .password-toggle-indicator::before {
+      content: $ci-eye-closed;
+    }
+  }
+}
+.was-validated .password-toggle .form-control:invalid,
+.was-validated .password-toggle .form-control.is-invalid,
+.was-validated .password-toggle .form-control:valid,
+.was-validated .password-toggle .form-control.is-valid {
+  padding-right: 4rem;
+  & + .password-toggle-btn { right: 2.1rem; }
+}
+
+
+// Switch alternative
+
+.switch {position: relative;}
+.switch-label {
+  display: flex;
+  position: relative;
+  background-color: $switch-alt-bg;
+  border: $switch-alt-border-width solid $switch-alt-border-color;
+  border-radius: $switch-alt-border-radius;
+  text-align: center;
+  user-select: none;
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: -$switch-alt-border-width;
+    left: -$switch-alt-border-width;
+    width: calc(50% + #{$switch-alt-border-width * 2});
+    height: calc(100% + #{$switch-alt-border-width * 2});
+    background-color: $switch-alt-indicator-bg;
+    border-radius: $switch-alt-border-radius;
+    transition: transform $switch-alt-transition-duration $switch-alt-transition-timing-function;
+    content: '';
+    will-change: transform;
+    z-index: 1;
+  }
+}
+
+.switch-label-item {
+  display: block;
+  position: relative;
+  width: 50%;
+  padding: {
+    top: $switch-alt-padding-y;
+    bottom: $switch-alt-padding-y;
+  }
+  font-weight: bold;
+  transition: color .25s ease-in-out;
+  will-change: color;
+  z-index: 2;
+
+  &:first-child { color: $switch-alt-bg; }
+  &:last-child { color: $switch-alt-indicator-bg; }
+}
+
+.switch-input:checked ~ .switch-label {
+  &::before {
+    transform: translateX(calc(100% - #{$switch-alt-border-width * 2}));
+  }
+  .switch-label-item {
+    &:first-child { color: $switch-alt-indicator-bg; }
+    &:last-child { color: $switch-alt-bg; }
+  }
+}
+
+
+// File input drop area
+
+.file-drop-area {
+  position: relative;
+  padding: ($spacer * 2.5) $spacer;
+  transition: $input-transition;
+  border: ($input-border-width * 2) dashed $input-border-color;
+  @include border-radius($border-radius-lg);
+  background-color: $input-bg;
+  text-align: center;
+  cursor: pointer;
+
+  .file-drop-input {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    opacity: 0;
+    outline: none;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .file-drop-icon {
+    display: block;
+    margin-bottom: .75rem;
+    color: $gray-900;
+    font-size: $font-size-base * 1.5;
+  }
+
+  .file-drop-preview {
+    max-width: $file-drop-area-preview-width;
+    margin: {
+      right: auto;
+      bottom: .75rem;
+      left: auto;
+    }
+  }
+
+  .file-drop-message {
+    display: block;
+    font-size: $font-size-sm;
+    margin-bottom: 1.25rem;
+  }
+
+  .btn {
+    position: relative;
+    z-index: 3;
+  }
+
+  &:hover {
+    border-color: darken($input-border-color, 7%);
+  }
+}
+
+
+// Size / color option
+
+.form-option {
+  padding-left: 0;
+
+  &.form-check-inline {
+    margin-right: $spacer * .25;
+  }
+
+  .form-check-input {
+    @extend .visually-hidden;
+    &:disabled ~ .form-option-label {
+      cursor: not-allowed;
+    }
+  }
+}
+.form-option-label {
+  position: relative;
+  margin-bottom: 0;
+  padding: {
+    top: .0625rem;
+    right:$form-option-padding-x;
+    left: $form-option-padding-x;
+  }
+  transition: $form-option-transition;
+  border: $form-option-border-width solid $form-option-border-color;
+  @include border-radius($form-option-border-radius);
+  color: $form-option-color;
+  font: {
+    size: $form-option-font-size;
+    weight: $form-option-font-weight;
+  }
+  text-align: center;
+  line-height: ($form-option-size-width - .25rem);
+  cursor: pointer;
+}
+
+
+// Size / color option - sizing
+
+.form-option-sm {
+  &.form-option-size > .form-option-label {
+    min-width: $form-option-sm-width;
+    height: $form-option-sm-width;
+  }
+
+  &.form-option-color > .form-option-label {
+    min-width: $form-option-sm-width;
+    height: $form-option-sm-width;
+  }
+
+  .form-option-label {
+    padding: {
+      right: $form-option-padding-x * .5;
+      left: $form-option-padding-x * .5;
+    }
+    font-size: $form-option-sm-font-size;
+    line-height: ($form-option-sm-width - .25rem);
+  }
+
+  .form-option-color-indicator {
+    width: ($form-option-sm-width - .625rem);
+    height: ($form-option-sm-width - .625rem);
+    margin: {
+      top: -(($form-option-sm-width - .625rem) * .5);
+      left: -(($form-option-sm-width - .625rem) * .5);
+    }
+  }
+}
+
+
+// Size option
+
+.form-option-size {
+  .form-option-label {
+    min-width: $form-option-size-width;
+    height: $form-option-size-width;
+  }
+
+  .form-check-input:checked ~ .form-option-label {
+    border-color: $form-option-active-border-color;
+    background-color: $form-option-active-bg;
+    color: $form-option-active-color;
+    @include box-shadow($box-shadow-sm);
+  }
+
+  .form-check-input:disabled ~ .form-option-label {
+    border-color: $gray-200;
+    background-color: $gray-200;
+    color: $gray-500;
+  }
+
+  .form-option-label:hover {
+    border-color: $form-option-hover-border-color;
+    color: $form-option-hover-color;
+  }
+}
+
+
+// Color option
+
+.form-option-color {
+  text-align: center;
+
+  &:hover {
+    .form-option-label {
+      border-color: $form-option-hover-border-color;
+    }
+    .form-option-color-text {
+      color: $body-color;
+    }
+  }
+
+  .form-option-label {
+    min-width: $form-option-color-width;
+    height: $form-option-color-width;
+    border-color: $form-option-border-color;
+  }
+
+  .form-check-input:checked {
+    ~ .form-option-label {
+      border-color: $form-option-active-border-color;
+      color: $form-option-active-color;
+    }
+    ~ .form-option-color-text {
+      color: $body-color;
+    }
+  }
+
+  .form-check-input:disabled {
+    ~ .form-option-label {
+      border-color: transparent;
+    }
+    ~ .form-option-color-text {
+      color: $gray-500;
+    }
+  }
+}
+
+.form-option-color-indicator {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: ($form-option-color-width - .625rem);
+  height: ($form-option-color-width - .625rem);
+  margin: {
+    top: -(($form-option-color-width - .625rem) * .5);
+    left: -(($form-option-color-width - .625rem) * .5);
+  }
+}
+
+.form-option-color-text {
+  display: block;
+  font-size: $form-option-color-text-font-size;
+  color: $form-option-color;
+  transition: color .2s;
+}
+
+
+// Control button
+
+.btn-control {
+  margin-right: .625rem;
+
+  .btn-control-label {
+    display: inline-block;
+    padding: $btn-control-padding-y $btn-control-padding-x;
+    font: {
+      size: $btn-control-font-size;
+      weight: $font-weight-bold;
+    }
+    border: $border-width solid $btn-control-border-color;
+    border-radius: $border-radius;
+    background-color: $btn-control-bg;
+    color: $btn-control-color;
+    transition: $btn-control-transition;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $btn-control-hover-border-color;
+      color: $btn-control-hover-color;
+    }
+  }
+
+  .btn-control-input {
+    @extend .visually-hidden;
+  }
+
+  .btn-control-input:checked ~ .btn-control-label {
+    border-color: $btn-control-active-border-color;
+    background-color: $btn-control-active-bg;
+    color: $btn-control-active-color;
+  }
+
+  .btn-control-input:disabled ~ .btn-control-label {
+    border-color: $btn-control-disabled-border-color;
+    color: $btn-control-disabled-color;
+    cursor: not-allowed;
+  }
+}
+
+
+// Subscription form status
+
+.subscription-status {
+  display: table;
+  @include border-radius($border-radius);
+  font-size: $font-size-sm;
+
+  &.status-success,
+  &.status-error {
+    margin-top: $spacer * .5;
+    padding: ($spacer * .5) ($spacer * .75);
+  }
+
+  &.status-success {
+    background-color: rgba($success, .08);
+    color: darken($success, 5%);
+  }
+
+  &.status-error {
+    background-color: rgba($danger, .08);
+    color: darken($danger, 5%);
+  }
+}

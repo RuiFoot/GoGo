@@ -1,0 +1,91 @@
+//
+// Gallery
+// based on https://github.com/sachinchoolur/lightgallery.js
+// ----------------------------------------------------------
+
+
+.gallery-item {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: escape-svg($gallery-cursor), pointer;
+
+  > img {
+    display: block;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+  }
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $gallery-overlay-bg;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    z-index: 3;
+    content: '';
+  }
+
+  .gallery-caption {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: $spacer ($spacer * .5);
+    transform: translateY($spacer);
+    transition: transform .35s ease-in-out, opacity .35s ease-in-out;
+    opacity: 0;
+    color: $gallery-caption-color;
+    font-weight: $gallery-caption-font-weight;
+    text-align: center;
+    will-change: transform;
+    z-index: 4;
+    @include font-size($gallery-caption-font-size);
+  }
+
+  // Video-item indicator
+  &.video-item::after {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $btn-video-size;
+    height: $btn-video-size;
+    padding-left: .25rem;
+    border-radius: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    background-color: $btn-video-bg;
+    color: $btn-video-color;
+    font-family: $icons-font-family;
+    line-height: $btn-video-size;
+    text-align: center;
+    content: $ci-play;
+    z-index: 4;
+    @include font-size($btn-video-font-size);
+  }
+
+  &:hover {
+    &::before { opacity: 1; }
+    .gallery-caption {
+      transform: initial;
+      opacity: 1;
+    }
+  }
+
+  &:active { cursor: grab; }
+}
+
+// Gallery backdrop
+.lg-backdrop { z-index: $zindex-gallery-backdrop; }
+
+// Gallery full-width scrollbar disable
+.lg-on { overflow: hidden; }

@@ -1,0 +1,16 @@
+// Construction demo overrides
+
+// Demo specific overrides
+$primary:                 #ff5a30;
+$path-to-fonts:          'https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;700&display=swap' !default;
+$font-family-sans-serif: 'Ubuntu', sans-serif !default;
+
+// Gradient
+$gradient-from-color:    $primary;
+$gradient-to-color:      #ff9330;
+
+// Path to font icons
+$icons-font-path:        '../../../fonts' !default;
+
+// Import core theme styles
+@import '../../theme.scss';

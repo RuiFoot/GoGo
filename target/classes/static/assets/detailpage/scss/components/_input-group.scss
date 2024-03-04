@@ -1,0 +1,58 @@
+//
+// Input group
+// --------------------------------------------------
+
+
+// Overriding custom control offset for checkbox & radio
+
+.input-group-text .form-check-input {
+  margin-top: -.1875rem;
+}
+
+
+// Textual addons icon sizing
+
+.input-group {
+  .input-group-text {
+    [class^='ci-'] {
+      @include font-size($input-group-addon-icon-size);
+    }
+  }
+}
+.input-group-sm {
+  .input-group-text {
+    [class^='ci-'] {
+      @include font-size($input-group-addon-icon-size-sm);
+    }
+  }
+}
+.input-group-lg {
+  .input-group-text {
+    [class^='ci-'] {
+      @include font-size($input-group-addon-icon-size-lg);
+    }
+  }
+}
+
+
+// Button addons sizing fix
+
+.input-group-lg .btn { @extend .btn-lg; }
+.input-group-sm .btn { @extend .btn-sm; }
+
+
+// Input-group light skin
+//
+// General
+[class^='input-group'].input-group-light {
+  .form-control, .form-select { @extend .input-light; }
+}
+
+// Addon
+.input-group.input-group-light {
+  .input-group-text {
+    border-color: $input-light-border-color;
+    background-color: $input-group-light-addon-bg;
+    color: $input-group-light-addon-color;
+  }
+}

@@ -1,0 +1,139 @@
+//
+// Typography
+// --------------------------------------------------
+
+
+// Headings
+
+h1, .h1 {
+  font-weight: $h1-font-weight;
+  line-height: $h1-line-height;
+}
+h2, .h2 {
+  font-weight: $h2-font-weight;
+  line-height: $h2-line-height;
+}
+h3, .h3 {
+  font-weight: $h3-font-weight;
+  line-height: $h3-line-height;
+}
+h4, .h4 {
+  font-weight: $h4-font-weight;
+  line-height: $h4-line-height;
+}
+h5, .h5 {
+  font-weight: $h5-font-weight;
+  line-height: $h5-line-height;
+}
+h6, .h6 {
+  font-weight: $h6-font-weight;
+  line-height: $h6-line-height;
+}
+
+h1, .h1, h2, .h2, h3, .h3,
+h4, .h4, h5, .h5, h6, .h6 {
+  [class^='ci-'],
+  [class*=' ci-'] {
+    font-weight: $font-weight-normal;
+  }
+}
+
+
+// Text-uppercase + letter-spacing
+
+.text-uppercase {
+  letter-spacing: $letter-spacing !important;
+}
+
+
+// For card/nav styled links
+
+.heading-highlight {
+  text-decoration: none;
+
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    transition: color .25s;
+  }
+
+  &:hover {
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6 {
+      color: $primary;
+    }
+  }
+}
+
+
+// Lists
+
+ul, ol, dt {
+  li {
+    margin-bottom: $spacer * .25;
+  }
+}
+
+
+// Description lists
+
+dt {
+  color: $headings-color;
+}
+
+
+// Blockquote
+
+.blockquote {
+  position: relative;
+  padding-left: $blockquote-padding-x;
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font: {
+      family: $icons-font-family;
+      weight: normal;
+    }
+    color: $primary;
+    line-height: 1;
+    content: $blockquote-icon;
+    @include font-size($blockquote-icon-size);
+  }
+
+  &.text-center {
+    padding: {
+      top: $blockquote-padding-y;
+      left: initial;
+    }
+    &::before {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &.text-end {
+    padding: {
+      right: $blockquote-padding-x;
+      left: initial;
+    }
+    &::before {
+      right: 0;
+      left: initial;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding-left: $blockquote-padding-x * .667;
+    &::before { @include font-size($blockquote-icon-size * .75); }
+  }
+}
+
+.blockquote-card .card-footer {
+  padding-left: $blockquote-padding-x + $card-spacer-x;
+
+  @include media-breakpoint-down(sm) {
+    padding-left: ($blockquote-padding-x * .667) + $card-spacer-x;
+  }
+}

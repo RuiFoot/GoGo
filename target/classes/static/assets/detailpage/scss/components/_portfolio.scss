@@ -1,0 +1,177 @@
+//
+// Portfolio (components related to portfolio)
+// --------------------------------------------------
+
+
+// General styles
+
+$portfolio-card-slide-body-offset: ($btn-font-size * $btn-line-height) + ($btn-padding-y * 2) + ($spacer * 1.5) + .125rem + .0625rem !default;
+
+.portfolio-card-img {
+  position: relative;
+  @include border-radius($portfolio-card-border-radius);
+  overflow: hidden;
+  z-index: 1;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+
+  > img {
+    display: block;
+    width: 100%;
+    transition: transform .3s ease-in-out;
+  }
+}
+
+.portfolio-card-body {
+  position: relative;
+  padding: $portfolio-card-body-padding-y $portfolio-card-body-padding-x;
+  z-index: 2;
+}
+
+.portfolio-card-title {
+  margin-bottom: $spacer * .25;
+  font-weight: $portfolio-card-title-font-weight;
+  transition: color .3s ease-in-out;
+  color: $portfolio-card-title-color;
+  @include font-size($portfolio-card-title-font-size);
+}
+
+
+// Card variants
+// --------------------------------------------------
+//
+// Scale effect
+
+.portfolio-card-scale {
+  display: block;
+  position: relative;
+  text-decoration: none;
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: -($grid-gutter-width * .5);
+    left: -($grid-gutter-width * .5);
+    width: calc(100% + #{$grid-gutter-width});
+    height: calc(100% + #{$grid-gutter-width * .5});
+    background-color: $portfolio-card-bg;
+    border-radius: $border-radius;
+    @include box-shadow($box-shadow-sm);
+    transition: opacity .3s ease-in-out;
+    opacity: 0;
+    content: '';
+  }
+
+  .portfolio-card-img > img { will-change: transform; }
+
+  .portfolio-card-body {
+    padding: {
+      right: 0;
+      bottom: ($portfolio-card-body-padding-y * 1.25);
+      left: 0;
+    }
+  }
+
+  &:hover {
+    text-decoration: none;
+    &::before { opacity: 1; }
+
+    .portfolio-card-img > img { transform: scale(1.08); }
+    .portfolio-card-title { color: $portfolio-card-title-hover-color; }
+  }
+}
+
+.carousel {
+  .portfolio-card-scale::before { box-shadow: none; }
+}
+
+
+// Slide effect
+
+.portfolio-card-slide {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  transition: box-shadow .25s ease-in-out;
+  overflow: hidden;
+  @include box-shadow($box-shadow-sm);
+
+  .portfolio-card-img > img {
+    transition: transform .25s ease-in-out;
+    will-change: transform;
+  }
+
+  .portfolio-card-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: ($portfolio-card-body-padding-y * 1.5);
+    background-color: $portfolio-card-bg;
+    text-align: center;
+    transform: translateY($portfolio-card-slide-body-offset);
+    transition: transform .25s ease-in-out;
+    will-change: transform;
+    .btn { margin-top: ($spacer * 1.5); }
+  }
+
+  &:hover {
+    text-decoration: none;
+    @include box-shadow($box-shadow);
+
+    .portfolio-card-img > img { transform: scale(1.06) translateY(-2rem); }
+    .portfolio-card-body { transform: translateY(0); }
+
+    &.portfolio-card-video {
+      .btn-video { top: calc(50% - #{$portfolio-card-slide-body-offset}); }
+    }
+  }
+
+  &.portfolio-card-video {
+    .btn-video {
+      top: calc(50% - (#{$portfolio-card-slide-body-offset} * .5));
+      transition: $btn-video-transition, top .25s ease-in-out;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    text-decoration: none;
+    @include box-shadow($box-shadow);
+
+    .portfolio-card-img > img { transform: scale(1.06) translateY(-2rem); }
+    .portfolio-card-body { transform: translateY(0); }
+
+    &.portfolio-card-video {
+      .btn-video { top: calc(50% - #{$portfolio-card-slide-body-offset}); }
+    }
+  }
+}
+
+
+// Card with video
+
+.portfolio-card-video {
+  @include border-radius($portfolio-card-border-radius);
+
+  .portfolio-card-img::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($gray-900, .2);
+    content: '';
+  }
+
+  .btn-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    z-index: 3;
+    will-change: top;
+    &:hover { box-shadow: none; }
+  }
+}
