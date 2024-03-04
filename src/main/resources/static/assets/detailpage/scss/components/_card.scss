@@ -1,0 +1,92 @@
+//
+// Card
+// --------------------------------------------------
+
+
+// Card title
+
+.card-title { margin-bottom: $card-spacer-y * .6; }
+
+
+// Card link
+
+a.card:hover,
+a.card-body:hover { text-decoration: none; }
+
+
+// Card hover / active state
+
+.card-hover { transition: $card-transition; }
+.card {
+  &.card-hover:hover,
+  &.card-active {
+    @include box-shadow($card-active-box-shadow !important);
+  }
+  &.shadow {
+    @include box-shadow($box-shadow-sm !important);
+    &.card-hover:hover,
+    &.card-active {
+      @include box-shadow($card-active-box-shadow-hover !important);
+    }
+  }
+}
+
+
+// Horizontal card
+
+.card-horizontal {
+
+  .card-img-top,
+  .card-img-bottom {
+    flex-shrink: 0;
+    min-height: 15rem;
+    background: {
+      position: center;
+      repeat: no-repeat;
+      size: cover;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    flex-direction: row;
+
+    .card-body {
+      padding: $card-spacer-x * 1.325;
+    }
+
+    .card-img-top,
+    .card-img-bottom {
+      width: $card-horizontal-image-width;
+    }
+
+    .card-img-top {
+      border-radius: 0;
+      @include border-start-radius($card-inner-border-radius);
+    }
+
+    .card-img-top.order-sm-2 {
+      border-radius: 0;
+      @include border-end-radius($card-inner-border-radius);
+    }
+  }
+}
+
+
+// Header navs
+
+.card-header-tabs,
+.card-header-pills {
+  margin: {
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  padding: {
+    top: $card-spacer-y * .333;
+    bottom: $card-spacer-y * .333;
+  }
+
+  .nav-link.active {
+    border-bottom-color: inherit;
+  }
+}

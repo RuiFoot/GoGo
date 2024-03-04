@@ -1,0 +1,14 @@
+// Creative Agency demo overrides
+
+// Demo specific overrides
+$primary:               #f52f6e;
+
+// Gradient
+$gradient-from-color:   $primary;
+$gradient-to-color:     #f42aa3;
+
+// Path to font icons
+$icons-font-path:       '../../../fonts' !default;
+
+// Import core theme styles
+@import '../../theme.scss';

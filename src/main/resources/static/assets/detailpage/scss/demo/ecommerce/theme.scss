@@ -1,0 +1,14 @@
+// E-Commerce demo overrides
+
+// Demo specific overrides
+$primary:               #17696a;
+
+// Gradient
+$gradient-from-color:   $primary;
+$gradient-to-color:     #0a9193;
+
+// Path to font icons
+$icons-font-path:       '../../../fonts' !default;
+
+// Import core theme styles
+@import '../../theme.scss';

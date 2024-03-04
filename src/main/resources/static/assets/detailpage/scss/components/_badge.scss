@@ -1,0 +1,67 @@
+//
+// Badge
+// --------------------------------------------------
+
+
+.badge {
+  &.bg-secondary,
+  &.bg-light {
+    color: $body-color;
+  }
+
+  &.bg-warning {
+    color: $white;
+  }
+
+  &.bg-dark {
+    background-color: $gray-800 !important;
+  }
+}
+
+
+// Badge link
+
+a.badge {
+  text-decoration: none;
+  transition: background-color .25s;
+
+  &:not(.bg-secondary):not(.bg-light):hover {
+    color: $white;
+  }
+}
+
+@each $color, $value in $theme-colors {
+  a.badge.bg-#{$color} {
+    &:hover {
+      background-color: darken($value, 10%) !important;
+    }
+  }
+}
+
+
+// Badge floating (absolute position)
+
+.badge {
+  &.badge-floating {
+    position: absolute;
+    top: $badge-floating-offset-y;
+    left: $badge-floating-offset-x;
+    z-index: 2;
+
+    // Alignment
+    &.badge-floating-end {
+      left: auto;
+      right: $badge-floating-offset-x;
+    }
+  }
+}
+
+
+// Pilled badge
+
+.badge.rounded-pill {
+  padding: {
+    right: $badge-padding-x * .8;
+    left: $badge-padding-x * .8;
+  }
+}

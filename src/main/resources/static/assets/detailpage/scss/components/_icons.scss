@@ -1,0 +1,866 @@
+//
+// Font Icons
+// Font generated using:
+// https://icomoon.io/app
+// --------------------------------------------------
+
+
+// Define icons variables
+
+$ci-arrow-bottom-left: '\e900';
+$ci-arrow-bottom-right: '\e901';
+$ci-arrow-down: '\e902';
+$ci-arrow-left: '\e903';
+$ci-arrow-right: '\e904';
+$ci-arrow-top-left: '\e905';
+$ci-arrow-top-right: '\e906';
+$ci-arrow-up: '\e907';
+$ci-arrow-back: '\e908';
+$ci-arrow-convert: '\e909';
+$ci-arrow-expand: '\e90a';
+$ci-arrow-fluid-horizontal: '\e90b';
+$ci-arrow-fluid-vertical: '\e90c';
+$ci-arrow-forward: '\e90d';
+$ci-arrow-horizontal: '\e90e';
+$ci-arrow-reload: '\e90f';
+$ci-arrow-select: '\e910';
+$ci-arrow-share: '\e911';
+$ci-arrow-vertical: '\e912';
+$ci-cross: '\e913';
+$ci-minus: '\e914';
+$ci-plus: '\e915';
+$ci-angle-down: '\e916';
+$ci-angle-left: '\e917';
+$ci-angle-right: '\e918';
+$ci-angle-up: '\e919';
+$ci-blocked: '\e91a';
+$ci-check: '\e91b';
+$ci-checkmark: '\e91c';
+$ci-check-round: '\e91d';
+$ci-close-round: '\e91e';
+$ci-heart: '\e91f';
+$ci-home: '\e920';
+$ci-info: '\e921';
+$ci-login: '\e922';
+$ci-minus-round: '\e923';
+$ci-plus-round: '\e924';
+$ci-profile: '\e925';
+$ci-search: '\e926';
+$ci-star: '\e927';
+$ci-calendar: '\e928';
+$ci-clock: '\e929';
+$ci-history: '\e92a';
+$ci-eye: '\e92b';
+$ci-eye-closed: '\e92c';
+$ci-lock: '\e92d';
+$ci-shield: '\e92e';
+$ci-unlock: '\e92f';
+$ci-alert: '\e930';
+$ci-alert-octagon: '\e931';
+$ci-bell: '\e932';
+$ci-danger: '\e933';
+$ci-chat: '\e934';
+$ci-comment: '\e935';
+$ci-envelope-opened: '\e936';
+$ci-iphone: '\e937';
+$ci-mail: '\e938';
+$ci-mention: '\e939';
+$ci-quote: '\e93a';
+$ci-play: '\e93f';
+$ci-play-outline: '\e954';
+$ci-attach: '\e93b';
+$ci-external-link: '\e93c';
+$ci-files: '\e93d';
+$ci-layouts: '\e93e';
+$ci-share: '\e940';
+$ci-upload: '\e941';
+$ci-map-pin-outline: '\e942';
+$ci-map-pin-solid: '\e943';
+$ci-volume-off: '\e944';
+$ci-volume-off-outline: '\e945';
+$ci-volume-on: '\e946';
+$ci-volume-on-outline: '\e947';
+$ci-cart: '\e948';
+$ci-behance: '\e949';
+$ci-dribbble: '\e94a';
+$ci-facebook: '\e94b';
+$ci-google: '\e94c';
+$ci-instagram: '\e94d';
+$ci-instagram-filled: '\e94e';
+$ci-linkedin: '\e94f';
+$ci-messenger: '\e950';
+$ci-twitter: '\e951';
+$ci-whatsapp: '\e952';
+$ci-youtube: '\e953';
+$ci-wechat: '\e955';
+$ci-figma: '\e956';
+$ci-github: '\e957';
+$ci-gitlab: '\e958';
+$ci-google-hangouts: '\e959';
+$ci-odnoklassniki: '\e95a';
+$ci-paypal: '\e95b';
+$ci-pinterest: '\e95c';
+$ci-rss: '\e95d';
+$ci-skype: '\e95e';
+$ci-slack: '\e95f';
+$ci-slack-filled: '\e960';
+$ci-stripe: '\e961';
+$ci-telegram: '\e962';
+$ci-tumblr: '\e963';
+$ci-twitch: '\e964';
+$ci-viber: '\e965';
+$ci-vimeo: '\e966';
+$ci-vkontakte: '\e967';
+$ci-wallet: '\e968';
+$ci-like: '\e969';
+$ci-hanger: '\e96a';
+$ci-filter-2: '\e96b';
+$ci-filter-1: '\e96c';
+$ci-dislike: '\e96d';
+$ci-delete: '\e96e';
+$ci-cart1: '\e96f';
+$ci-bag: '\e970';
+$ci-star-filled: '\e971';
+$ci-heart-filled: '\e972';
+$ci-logout: '\e973';
+$ci-world: '\e974';
+$ci-truck: '\e975';
+$ci-settings: '\e976';
+$ci-send: '\e977';
+$ci-plane: '\e978';
+$ci-photo: '\e979';
+$ci-lifebuoy: '\e97a';
+$ci-headset: '\e97b';
+$ci-folder: '\e97c';
+$ci-file-upload: '\e97d';
+$ci-file-download: '\e97e';
+$ci-cloud-upload: '\e97f';
+$ci-cloud-download: '\e980';
+$ci-anchor: '\e981';
+$ci-download: '\e982';
+$ci-sidebar-left: '\e983';
+$ci-sidebar-right: '\e984';
+$ci-list: '\e985';
+$ci-grid: '\e986';
+$ci-mic: '\e987';
+$ci-credit-card: '\e988';
+
+
+// Define icon font face
+
+@font-face {
+  font: {
+    family: '#{$icons-font-family}';
+    weight: normal;
+    style: normal;
+    display: block;
+  }
+  src:
+    url('#{$icons-font-path}/#{$icons-font-family}.ttf?bzu88l') format('truetype'),
+    url('#{$icons-font-path}/#{$icons-font-family}.woff?bzu88l') format('woff'),
+    url('#{$icons-font-path}/#{$icons-font-family}.svg?bzu88l##{$icons-font-family}') format('svg');
+}
+
+[class^='ci-'], [class*=' ci-'] {
+  display: inline-block;
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font: {
+    family: '#{$icons-font-family}' !important;
+    style: normal;
+    weight: normal;
+    variant: normal;
+  }
+  speak: never;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ci-arrow-bottom-left {
+  &:before {
+    content: $ci-arrow-bottom-left; 
+  }
+}
+.ci-arrow-bottom-right {
+  &:before {
+    content: $ci-arrow-bottom-right; 
+  }
+}
+.ci-arrow-down {
+  &:before {
+    content: $ci-arrow-down; 
+  }
+}
+.ci-arrow-left {
+  &:before {
+    content: $ci-arrow-left; 
+  }
+}
+.ci-arrow-right {
+  &:before {
+    content: $ci-arrow-right; 
+  }
+}
+.ci-arrow-top-left {
+  &:before {
+    content: $ci-arrow-top-left; 
+  }
+}
+.ci-arrow-top-right {
+  &:before {
+    content: $ci-arrow-top-right; 
+  }
+}
+.ci-arrow-up {
+  &:before {
+    content: $ci-arrow-up; 
+  }
+}
+.ci-arrow-back {
+  &:before {
+    content: $ci-arrow-back; 
+  }
+}
+.ci-arrow-convert {
+  &:before {
+    content: $ci-arrow-convert; 
+  }
+}
+.ci-arrow-expand {
+  &:before {
+    content: $ci-arrow-expand; 
+  }
+}
+.ci-arrow-fluid-horizontal {
+  &:before {
+    content: $ci-arrow-fluid-horizontal; 
+  }
+}
+.ci-arrow-fluid-vertical {
+  &:before {
+    content: $ci-arrow-fluid-vertical; 
+  }
+}
+.ci-arrow-forward {
+  &:before {
+    content: $ci-arrow-forward; 
+  }
+}
+.ci-arrow-horizontal {
+  &:before {
+    content: $ci-arrow-horizontal; 
+  }
+}
+.ci-arrow-reload {
+  &:before {
+    content: $ci-arrow-reload; 
+  }
+}
+.ci-arrow-select {
+  &:before {
+    content: $ci-arrow-select; 
+  }
+}
+.ci-arrow-share {
+  &:before {
+    content: $ci-arrow-share; 
+  }
+}
+.ci-arrow-vertical {
+  &:before {
+    content: $ci-arrow-vertical; 
+  }
+}
+.ci-cross {
+  &:before {
+    content: $ci-cross; 
+  }
+}
+.ci-minus {
+  &:before {
+    content: $ci-minus; 
+  }
+}
+.ci-plus {
+  &:before {
+    content: $ci-plus; 
+  }
+}
+.ci-angle-down {
+  &:before {
+    content: $ci-angle-down; 
+  }
+}
+.ci-angle-left {
+  &:before {
+    content: $ci-angle-left; 
+  }
+}
+.ci-angle-right {
+  &:before {
+    content: $ci-angle-right; 
+  }
+}
+.ci-angle-up {
+  &:before {
+    content: $ci-angle-up; 
+  }
+}
+.ci-blocked {
+  &:before {
+    content: $ci-blocked; 
+  }
+}
+.ci-check {
+  &:before {
+    content: $ci-check; 
+  }
+}
+.ci-checkmark {
+  &:before {
+    content: $ci-checkmark; 
+  }
+}
+.ci-check-round {
+  &:before {
+    content: $ci-check-round; 
+  }
+}
+.ci-close-round {
+  &:before {
+    content: $ci-close-round; 
+  }
+}
+.ci-heart {
+  &:before {
+    content: $ci-heart; 
+  }
+}
+.ci-home {
+  &:before {
+    content: $ci-home; 
+  }
+}
+.ci-info {
+  &:before {
+    content: $ci-info; 
+  }
+}
+.ci-login {
+  &:before {
+    content: $ci-login; 
+  }
+}
+.ci-minus-round {
+  &:before {
+    content: $ci-minus-round; 
+  }
+}
+.ci-plus-round {
+  &:before {
+    content: $ci-plus-round; 
+  }
+}
+.ci-profile {
+  &:before {
+    content: $ci-profile; 
+  }
+}
+.ci-search {
+  &:before {
+    content: $ci-search; 
+  }
+}
+.ci-star {
+  &:before {
+    content: $ci-star; 
+  }
+}
+.ci-calendar {
+  &:before {
+    content: $ci-calendar; 
+  }
+}
+.ci-clock {
+  &:before {
+    content: $ci-clock; 
+  }
+}
+.ci-history {
+  &:before {
+    content: $ci-history; 
+  }
+}
+.ci-eye {
+  &:before {
+    content: $ci-eye; 
+  }
+}
+.ci-eye-closed {
+  &:before {
+    content: $ci-eye-closed; 
+  }
+}
+.ci-lock {
+  &:before {
+    content: $ci-lock; 
+  }
+}
+.ci-shield {
+  &:before {
+    content: $ci-shield; 
+  }
+}
+.ci-unlock {
+  &:before {
+    content: $ci-unlock; 
+  }
+}
+.ci-alert {
+  &:before {
+    content: $ci-alert; 
+  }
+}
+.ci-alert-octagon {
+  &:before {
+    content: $ci-alert-octagon; 
+  }
+}
+.ci-bell {
+  &:before {
+    content: $ci-bell; 
+  }
+}
+.ci-danger {
+  &:before {
+    content: $ci-danger; 
+  }
+}
+.ci-chat {
+  &:before {
+    content: $ci-chat; 
+  }
+}
+.ci-comment {
+  &:before {
+    content: $ci-comment; 
+  }
+}
+.ci-envelope-opened {
+  &:before {
+    content: $ci-envelope-opened; 
+  }
+}
+.ci-iphone {
+  &:before {
+    content: $ci-iphone; 
+  }
+}
+.ci-mail {
+  &:before {
+    content: $ci-mail; 
+  }
+}
+.ci-mention {
+  &:before {
+    content: $ci-mention; 
+  }
+}
+.ci-quote {
+  &:before {
+    content: $ci-quote; 
+  }
+}
+.ci-play {
+  &:before {
+    content: $ci-play; 
+  }
+}
+.ci-play-outline {
+  &:before {
+    content: $ci-play-outline; 
+  }
+}
+.ci-attach {
+  &:before {
+    content: $ci-attach; 
+  }
+}
+.ci-external-link {
+  &:before {
+    content: $ci-external-link; 
+  }
+}
+.ci-files {
+  &:before {
+    content: $ci-files; 
+  }
+}
+.ci-layouts {
+  &:before {
+    content: $ci-layouts; 
+  }
+}
+.ci-share {
+  &:before {
+    content: $ci-share; 
+  }
+}
+.ci-upload {
+  &:before {
+    content: $ci-upload; 
+  }
+}
+.ci-map-pin-outline {
+  &:before {
+    content: $ci-map-pin-outline; 
+  }
+}
+.ci-map-pin-solid {
+  &:before {
+    content: $ci-map-pin-solid; 
+  }
+}
+.ci-volume-off {
+  &:before {
+    content: $ci-volume-off; 
+  }
+}
+.ci-volume-off-outline {
+  &:before {
+    content: $ci-volume-off-outline; 
+  }
+}
+.ci-volume-on {
+  &:before {
+    content: $ci-volume-on; 
+  }
+}
+.ci-volume-on-outline {
+  &:before {
+    content: $ci-volume-on-outline; 
+  }
+}
+.ci-cart {
+  &:before {
+    content: $ci-cart; 
+  }
+}
+.ci-behance {
+  &:before {
+    content: $ci-behance; 
+  }
+}
+.ci-dribbble {
+  &:before {
+    content: $ci-dribbble; 
+  }
+}
+.ci-facebook {
+  &:before {
+    content: $ci-facebook; 
+  }
+}
+.ci-google {
+  &:before {
+    content: $ci-google; 
+  }
+}
+.ci-instagram {
+  &:before {
+    content: $ci-instagram; 
+  }
+}
+.ci-instagram-filled {
+  &:before {
+    content: $ci-instagram-filled; 
+  }
+}
+.ci-linkedin {
+  &:before {
+    content: $ci-linkedin; 
+  }
+}
+.ci-messenger {
+  &:before {
+    content: $ci-messenger; 
+  }
+}
+.ci-twitter {
+  &:before {
+    content: $ci-twitter; 
+  }
+}
+.ci-whatsapp {
+  &:before {
+    content: $ci-whatsapp; 
+  }
+}
+.ci-youtube {
+  &:before {
+    content: $ci-youtube; 
+  }
+}
+.ci-wechat {
+  &:before {
+    content: $ci-wechat; 
+  }
+}
+.ci-figma {
+  &:before {
+    content: $ci-figma; 
+  }
+}
+.ci-github {
+  &:before {
+    content: $ci-github; 
+  }
+}
+.ci-gitlab {
+  &:before {
+    content: $ci-gitlab; 
+  }
+}
+.ci-google-hangouts {
+  &:before {
+    content: $ci-google-hangouts; 
+  }
+}
+.ci-odnoklassniki {
+  &:before {
+    content: $ci-odnoklassniki; 
+  }
+}
+.ci-paypal {
+  &:before {
+    content: $ci-paypal; 
+  }
+}
+.ci-pinterest {
+  &:before {
+    content: $ci-pinterest; 
+  }
+}
+.ci-rss {
+  &:before {
+    content: $ci-rss; 
+  }
+}
+.ci-skype {
+  &:before {
+    content: $ci-skype; 
+  }
+}
+.ci-slack {
+  &:before {
+    content: $ci-slack; 
+  }
+}
+.ci-slack-filled {
+  &:before {
+    content: $ci-slack-filled; 
+  }
+}
+.ci-stripe {
+  &:before {
+    content: $ci-stripe; 
+  }
+}
+.ci-telegram {
+  &:before {
+    content: $ci-telegram; 
+  }
+}
+.ci-tumblr {
+  &:before {
+    content: $ci-tumblr; 
+  }
+}
+.ci-twitch {
+  &:before {
+    content: $ci-twitch; 
+  }
+}
+.ci-viber {
+  &:before {
+    content: $ci-viber; 
+  }
+}
+.ci-vimeo {
+  &:before {
+    content: $ci-vimeo; 
+  }
+}
+.ci-vkontakte {
+  &:before {
+    content: $ci-vkontakte; 
+  }
+}
+.ci-wallet {
+  &:before {
+    content: $ci-wallet; 
+  }
+}
+.ci-like {
+  &:before {
+    content: $ci-like; 
+  }
+}
+.ci-hanger {
+  &:before {
+    content: $ci-hanger; 
+  }
+}
+.ci-filter-2 {
+  &:before {
+    content: $ci-filter-2; 
+  }
+}
+.ci-filter-1 {
+  &:before {
+    content: $ci-filter-1; 
+  }
+}
+.ci-dislike {
+  &:before {
+    content: $ci-dislike; 
+  }
+}
+.ci-delete {
+  &:before {
+    content: $ci-delete; 
+  }
+}
+.ci-cart1 {
+  &:before {
+    content: $ci-cart1; 
+  }
+}
+.ci-bag {
+  &:before {
+    content: $ci-bag; 
+  }
+}
+.ci-star-filled {
+  &:before {
+    content: $ci-star-filled; 
+  }
+}
+.ci-heart-filled {
+  &:before {
+    content: $ci-heart-filled; 
+  }
+}
+.ci-logout {
+  &:before {
+    content: $ci-logout; 
+  }
+}
+.ci-world {
+  &:before {
+    content: $ci-world; 
+  }
+}
+.ci-truck {
+  &:before {
+    content: $ci-truck; 
+  }
+}
+.ci-settings {
+  &:before {
+    content: $ci-settings; 
+  }
+}
+.ci-send {
+  &:before {
+    content: $ci-send; 
+  }
+}
+.ci-plane {
+  &:before {
+    content: $ci-plane; 
+  }
+}
+.ci-photo {
+  &:before {
+    content: $ci-photo; 
+  }
+}
+.ci-lifebuoy {
+  &:before {
+    content: $ci-lifebuoy; 
+  }
+}
+.ci-headset {
+  &:before {
+    content: $ci-headset; 
+  }
+}
+.ci-folder {
+  &:before {
+    content: $ci-folder; 
+  }
+}
+.ci-file-upload {
+  &:before {
+    content: $ci-file-upload; 
+  }
+}
+.ci-file-download {
+  &:before {
+    content: $ci-file-download; 
+  }
+}
+.ci-cloud-upload {
+  &:before {
+    content: $ci-cloud-upload; 
+  }
+}
+.ci-cloud-download {
+  &:before {
+    content: $ci-cloud-download; 
+  }
+}
+.ci-anchor {
+  &:before {
+    content: $ci-anchor; 
+  }
+}
+.ci-download {
+  &:before {
+    content: $ci-download; 
+  }
+}
+.ci-sidebar-left {
+  &:before {
+    content: $ci-sidebar-left; 
+  }
+}
+.ci-sidebar-right {
+  &:before {
+    content: $ci-sidebar-right; 
+  }
+}
+.ci-list {
+  &:before {
+    content: $ci-list; 
+  }
+}
+.ci-grid {
+  &:before {
+    content: $ci-grid; 
+  }
+}
+.ci-mic {
+  &:before {
+    content: $ci-mic; 
+  }
+}
+.ci-credit-card {
+  &:before {
+    content: $ci-credit-card; 
+  }
+}

@@ -1,0 +1,14 @@
+// Online Courses demo overrides
+
+// Demo specific overrides
+$primary:               #ff3f3a;
+
+// Gradient
+$gradient-from-color:   $primary;
+$gradient-to-color:     #f75e05;
+
+// Path to font icons
+$icons-font-path:       '../../../fonts' !default;
+
+// Import core theme styles
+@import '../../theme.scss';

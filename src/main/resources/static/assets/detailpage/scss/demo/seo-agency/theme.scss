@@ -1,0 +1,13 @@
+// SEO & Marketing Agency demo overrides
+
+// Demo specific overrides
+$primary:               #7772f1;
+
+// Gradient
+$gradient-from-color:   $primary;
+$gradient-to-color:     #70a9ff;
+
+$icons-font-path:       '../../../fonts' !default;
+
+// Import core theme styles
+@import '../../theme.scss';

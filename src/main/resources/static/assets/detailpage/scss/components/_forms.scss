@@ -1,0 +1,111 @@
+//
+// Forms
+// --------------------------------------------------
+//
+// General
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+}
+
+
+// Labels
+
+[class^='form-label'],
+[class*=' form-label'] {
+  margin-bottom: $form-label-margin-bottom;
+}
+
+.form-label       { @include font-size($label-font-size);    }
+.form-label-lg    { @include font-size($label-font-size-lg); }
+.form-label-sm    { @include font-size($label-font-size-sm); }
+.form-check-label { @include font-size($label-font-size);    }
+
+
+// Input light skin
+
+.form-control.input-light,
+.form-select.input-light {
+  background-color: $input-light-bg;
+  color: $input-light-color;
+  border-color: $input-light-border-color;
+
+  &::placeholder {
+    color: $input-light-placeholder-color;
+  }
+
+  &:focus {
+    background-color: $input-light-focus-bg;
+    color: $input-light-focus-color;
+    border-color: $input-light-focus-border-color;
+    &::placeholder {
+      color: $input-light-focus-placeholder-color;
+    }
+  }
+
+  &:disabled {
+    background-color: $input-light-disabled-bg;
+    color: $input-light-disabled-color;
+    &::placeholder {
+      color: $input-light-disabled-placeholder-color;
+    }
+  }
+}
+
+.form-select.input-light {
+  background-image: escape-svg($form-select-light-indicator);
+  &:focus {
+    background-image: escape-svg($form-select-light-focus-indicator);
+  }
+}
+
+
+// Switch
+
+.form-switch .form-check-input:checked {
+  @include box-shadow($form-switch-checked-box-shadow);
+}
+
+
+// Validation
+
+.was-validated :invalid ~ .invalid-tooltip,
+.is-invalid ~ .invalid-tooltip,
+.was-validated :valid ~ .valid-tooltip,
+.is-valid ~ .valid-tooltip {
+  display: table;
+}
+
+.was-validated {
+  .invalid-tooltip,
+  .valid-tooltip {
+    position: static;
+    color: $white;
+  }
+  .form-control:valid,
+  .form-control.is-valid,
+  .form-select:valid,
+  .form-select.is-valid {
+    border-color: $input-border-color !important;
+  }
+  .form-check-input:not(:checked):valid,
+  .form-check-input:not(:checked).is-valid {
+    border-color: $input-border-color !important;
+  }
+}
+.was-validated .form-check-input:invalid:checked,
+.form-check-input.is-invalid:checked {
+  background-color: transparent;
+  border-color: $gray-500;
+}
+.was-validated .form-check-input:valid ~ .form-check-label,
+.was-validated .form-check-input.is-valid ~ .form-check-label {
+  color: inherit;
+}
+.was-validated .form-check-input:valid:checked,
+.was-validated .form-check-input.is-valid:checked {
+  border-color: $form-check-input-checked-border-color;
+  background-color: $form-check-input-checked-bg-color;
+  box-shadow: none;
+}
