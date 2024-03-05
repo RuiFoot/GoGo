@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="orai18n">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../orai18n.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

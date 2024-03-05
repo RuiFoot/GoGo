@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <%@include file="common/header_main.jsp"%>
-<c:set var="contentPath" value="${pageContext.request.contextPath}"/>
 
 <!-- 카카오맵 -->
 <script type="text/javascript" src = "//dapi.kakao.com/v2/maps/sdk.js?appkey=ec49957b350f1235c905f13271cbcbb8"></script>
@@ -43,6 +43,7 @@
 
                     <div class="col-xl-4 col-md-6 mb-4">
                         <label class="form-label" for="form_sido">시 / 구</label>
+
                         <select class="form-select" name="neighbourhood" id="form_sido" data-live-search="true" data-selected-text-format="count &gt; 1" data-none-selected-text="시 / 구">
                             <option value="all">전체</option>
                             <option value="서울특별시">서울특별시</option>
@@ -62,7 +63,6 @@
                             <option value="경상북도">경상북도</option>
                             <option value="경상남도">경상남도</option>
                             <option value="강원도">강원도</option>
-
                         </select>
                     </div>
                     <div class="col-xl-4 col-md-6 mb-4">
@@ -71,6 +71,27 @@
                             <option value="all">전체</option>
                         </select>
                     </div>
+
+                    <script type="text/javascript">
+                        $(document).ready(function(){
+                            $('#form_sido').change(function(){
+                                var selectedSido = $(this).val();
+                                $.ajax({
+                                    type: 'GET',
+                                    url: '/getArea',
+                                    data: { sido: selectedSido },
+                                    dataType: 'json', // 요청한 데이터가 JSON 형식임을 명시
+                                    success: function(data) {
+                                        console.log(data);
+                                        $('#form_sgg').empty(); // 기존 옵션 제거
+                                        $.each(data, function(index, area){
+                                            $('#form_sgg').append('<option value="' + area.sigungu + '">' + area.sigungu + '</option>');
+                                        });
+                                    }
+                                });
+                            });
+                        });
+                    </script>
 
                     <!-- 더 다양한 필더를 활용하려면 이것 활용 -->
 
