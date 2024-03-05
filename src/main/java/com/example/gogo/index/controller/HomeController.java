@@ -1,15 +1,16 @@
 package com.example.gogo.index.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class HomeController {
     @RequestMapping(value = "/")
-    public String doHome(Model model){
+    public ModelAndView doHome(){
         System.out.println("실행 성공");
-        model.addAttribute("message","Welcome!!");
-        return "index";
+        ModelAndView modelAndView = new ModelAndView("index");
+        modelAndView.addObject("message","Welcome!!");
+        return modelAndView;
     }
 }

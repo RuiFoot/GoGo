@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa1c2e0e-4c97-49db-bb0c-54cd0931a335" name="변경" comment="기역기역 스프링부트 프로젝트 세팅">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +220,9 @@
       <workItem from="1709544169220" duration="122000" />
       <workItem from="1709544296057" duration="167000" />
       <workItem from="1709544482774" duration="106000" />
-      <workItem from="1709544596809" duration="63000" />
+      <workItem from="1709544596809" duration="452000" />
+      <workItem from="1709611818752" duration="72000" />
+      <workItem from="1709615144936" duration="761000" />
     </task>
     <task id="LOCAL-00001" summary="기역기역 스프링부트 프로젝트 세팅">
       <option name="closed" value="true" />
@@ -235,7 +240,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709543437494</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="기역기역 스프링부트 프로젝트 세팅">
+      <option name="closed" value="true" />
+      <created>1709544835747</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1709544835747</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,17 +278,6 @@
               <option name="CUSTOM_BOOLEAN_PROPERTIES">
                 <map>
                   <entry key="Show.Git.Branches" value="true" />
-                </map>
-              </option>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="master" />
-                      </list>
-                    </value>
-                  </entry>
                 </map>
               </option>
             </State>
