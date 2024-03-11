@@ -3,6 +3,7 @@ package com.example.gogo;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -25,15 +26,19 @@ public class GogoApplication {
 		SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
 		sessionFactory.setDataSource(dataSource);
 
-		/* xml 파일 위치 지정 */
-		/* src/main/resources에 있는 mapper폴더 아래 모든 xml 파일 */
-		Resource[] res = new PathMatchingResourcePatternResolver().getResources("classpath:mappers/**/*.xml");
+
+		Resource[] res = new PathMatchingResourcePatternResolver().getResources("classpath:mappers/*.xml");
 		sessionFactory.setMapperLocations(res);
 
-		/* xml 파일에서 사용할 Model 폴더 지정 */
+
 		sessionFactory.setTypeAliasesPackage("com.example.gogo.*.vo");
 
 		return sessionFactory.getObject();
 	}
+	@Bean
+	public SqlSessionTemplate sqlSessionTemplate(SqlSessionFactory sqlSessionFactory){
+		return new SqlSessionTemplate(sqlSessionFactory);
+	}
+
 
 }

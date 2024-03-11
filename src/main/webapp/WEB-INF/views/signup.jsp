@@ -1,14 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!-- Primary Meta Tags -->
-    <title>기역기역(sign_up)</title>
+    <title>기역기역 - 회원가입</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="title" content="Spaces - Sign up">
+    <meta name="title" content="기역기역 - 회원가입">
     <meta name="author" content="Themesberg">
     <meta name="description" content="Premium Directory Listing Bootstrap 4 Template featuring 37 hand-crafted pages, a dashboard an Mapbox integration. Spaces also comes with a complete UI Kit featuring over 700 components by Themesberg.">
     <meta name="keywords" content="bootstrap, bootstrap 4 template, directory listing bootstrap, bootstrap 4 listing, bootstrap listing, bootstrap 4 directory listing template, vector map, leaflet js template, mapbox theme, mapbox template, dashboard, themesberg, user dashboard bootstrap, dashboard bootstrap, ui kit, bootstrap ui kit, premium bootstrap theme" />
@@ -18,16 +18,16 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://demo.themesberg.com/pixel-pro">
-    <meta property="twitter:title" content="Spaces - Sign up">
+    <meta property="twitter:title" content="기역기역 - 회원가입">
     <meta property="twitter:description" content="Premium Directory Listing Bootstrap 4 Template featuring 37 hand-crafted pages, a dashboard an Mapbox integration. Spaces also comes with a complete UI Kit featuring over 700 components by Themesberg.">
     <meta property="twitter:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/spaces/thumbnail.jpg">
 
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="120x120" href="resources/assets/img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="resources/assets/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="resources/assets/img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="resources/assets/img/favicon/site.webmanifest">
-    <link rel="mask-icon" href="resources/assets/img/favicon/safari-pinned-tab.svg" color="#ffffff">
+    <link rel="apple-touch-icon" sizes="120x120" href="resources/img/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="resources/img/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/img/logo.png">
+    <link rel="manifest" href="resources/img/logo.png">
+    <link rel="mask-icon" href="resources/img/logo.png" color="#ffffff">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 
@@ -46,47 +46,38 @@
     <!-- Main CSS -->
     <link type="text/css" href="resources/css/spaces.css" rel="stylesheet">
 
-
-
     <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
 
 </head>
 
 <body>
-<!-- <main>
-
-    <div class="preloader bg-dark flex-column justify-content-center align-items-center">
-<div class="position-relative">
-    <img src="resources/assets/img/brand/light-without-letter.svg" alt="Logo loader">
-    <img src="resources/assets/img/brand/letter.svg" class="rotate-letter" alt="Letter loader">
-</div> -->
-</div>
-
-
-<!-- Section -->
-<section class="min-vh-100 d-flex align-items-center section-image overlay-soft-dark py-5 py-lg-0" data-background="resources/assets/img/form-image.jpg">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12">
-                <div class="text-center text-md-center mb-5 mt-md-0 text-white">
-                    <h1 class="mb-0 h3">회원가입</h1>
+<main>
+    <!-- Section -->
+    <section class="min-vh-100 d-flex align-items-center section-image overlay-soft-dark py-5 py-lg-0"
+             data-background="resources/assets/img/form-image.jpg">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="text-center text-md-center mb-5 mt-md-0 text-white">
+                        <h1 class="mb-0 h3">회원가입</h1>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12 d-flex align-items-center justify-content-center">
-                <div class="signin-inner mt-3 mt-lg-0 bg-white shadow-soft border rounded border-light p-4 p-lg-5 w-100 fmxw-500">
-                    <form action="#">
-                        <!-- Form -->
-                        <div class="form-group">
-                            <label for="exampleInputIcon4">이메일</label>
-                            <div class="input-group mb-4">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><span class="fas fa-envelope"></span></span>
+                <div class="col-12 d-flex align-items-center justify-content-center">
+                    <div class="signin-inner mt-3 mt-lg-0 bg-white shadow-soft border rounded border-light p-4 p-lg-5 w-100 fmxw-500">
+                        <form action="/signup/addmember" method="post">
+                            <!-- Form -->
+                            <div class="form-group">
+                                <label for="exampleInputIcon4">이메일</label>
+                                <div class="input-group mb-4">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><span class="fas fa-envelope"></span></span>
+                                    </div>
+                                    <input class="form-control" id="member_email" placeholder="기역기역@example.com"
+                                           name = "member_email" type="text" aria-label="email adress">
                                 </div>
-                                <input class="form-control" id="exampleInputIcon4" placeholder="example@company.com" type="text" aria-label="email adress">
+                                <button type="button" class="btn btn-primary" onclick="CheckByEmail()">중복 확인</button>
                             </div>
-                        </div>
-                        <!-- End of Form -->
-                        <div class="form-group">
+                            <!-- End of Form -->
                             <!-- Form -->
                             <div class="form-group">
                                 <label for="password">비밀번호</label>
@@ -94,9 +85,11 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><span class="fas fa-unlock-alt"></span></span>
                                     </div>
-                                    <input class="form-control" id="password" placeholder="비밀번호" type="password" aria-label="Password" required>
+                                    <input class="form-control" id="password" placeholder="비밀번호" type="password"
+                                           name = "member_pw" aria-label="Password" required>
                                     <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary" type="button" id="togglePassword"><span class="fas fa-eye"></span></button>
+                                        <button class="btn btn-outline-secondary" type="button"
+                                                id="togglePassword"><span class="fas fa-eye"></span></button>
                                     </div>
                                 </div>
                             </div>
@@ -109,9 +102,11 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><span class="fas fa-unlock-alt"></span></span>
                                     </div>
-                                    <input class="form-control" id="password_confirm" placeholder="비밀번호 중복확인" type="password" aria-label="Password" required>
+                                    <input class="form-control" id="password_confirm" placeholder="비밀번호 중복확인"
+                                           type="password" aria-label="Password" required>
                                     <div class="input-group-append">
-                                        <button class="btn btn-outline-secondary" type="button" id="togglePasswordConfirm"><span class="fas fa-eye"></span></button>
+                                        <button class="btn btn-outline-secondary" type="button"
+                                                id="togglePasswordConfirm"><span class="fas fa-eye"></span></button>
                                     </div>
                                 </div>
                             </div>
@@ -121,8 +116,19 @@
                             <div class="form-group">
                                 <label for="password_confirm">이름</label>
                                 <div class="input-group">
-                                    <input class="form-control" id="name" placeholder="이름을 입력해주세요." type="name" aria-label="name" required>
+                                    <input class="form-control" id="name" placeholder="이름을 입력해주세요." type="text"
+                                           name = "member_name" aria-label="name" required>
                                 </div>
+                            </div>
+                            <!-- End of Form -->
+                            <!-- Form  -->
+                            <div class="form-group">
+                                <label for="password_confirm">닉네임</label>
+                                <div class="input-group">
+                                    <input class="form-control" id="member_nickname" placeholder="사용될 닉네임을 입력해주세요." type="text"
+                                           name = "member_nickname" aria-label=member_nickname required>
+                                </div>
+                                <button type="button" class="btn btn-primary" onclick="CheckByNickname()">중복 확인</button>
                             </div>
                             <!-- End of Form -->
 
@@ -131,11 +137,11 @@
                                 <label>성별</label>
                                 <div class="input-group">
                                     <div class="gender-box">
-                                        <input type="radio" name="gender" value="male" required />
+                                        <input type="radio" name="member_gender" value="male" required />
                                         <label for="male">남성</label>
                                     </div>
                                     <div class="gender-box">
-                                        <input type="radio" name="gender" value="female" required />
+                                        <input type="radio" name="member_gender" value="female" required />
                                         <label for="female">여성</label>
                                     </div>
                                 </div>
@@ -145,7 +151,7 @@
                             <div class="form-group">
                                 <label for="birthdate">생년월일</label>
                                 <div class="input-group">
-                                    <input type="date" id="birthdate" name="birthdate" class="form-control" required>
+                                    <input type="date" id="birthdate" name="member_birth" class="form-control" required>
                                 </div>
                             </div>
                             <!-- End of Form -->
@@ -156,34 +162,19 @@
                                     <span class="small">약관에 <a class="text-secondary" href="./terms.html">동의합니다.</a></span>
                                 </label>
                             </div>
-                        </div>
-                        <button type="submit" class="btn btn-block btn-primary">계정 만들기</button>
-                    </form>
-                    <!-- <div class="mt-3 mb-4 text-center">
-                        <span class="font-weight-normal">or</span>
-                    </div>
-                    <div class="btn-wrapper my-4 text-center">
-                        <button class="btn btn-icon-only btn-pill btn-outline-light text-facebook mr-2" type="button" aria-label="facebook button" title="facebook button">
-                            <span aria-hidden="true" class="fab fa-facebook-f"></span>
-                        </button>
-                        <button class="btn btn-icon-only btn-pill btn-outline-light text-twitter mr-2" type="button" aria-label="twitter button" title="twitter button">
-                            <span aria-hidden="true" class="fab fa-twitter"></span>
-                        </button>
-                        <button class="btn btn-icon-only btn-pill btn-outline-light text-facebook" type="button" aria-label="github button" title="github button">
-                            <span aria-hidden="true" class="fab fa-github"></span>
-                        </button>
-                    </div> -->
-                    <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
+                            <button type="submit" class="btn btn-block btn-primary">계정 만들기</button>
+                        </form>
+                        <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
                                 <span class="font-weight-normal">
                                     계정이 이미 있습니까?
                                     <a href="http://127.0.0.1:5500/semi/html/sign_in.html" class="font-weight-bold">여기에 로그인하십시오</a>
                                 </span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 </main>
 
 <!-- Core -->
@@ -192,90 +183,79 @@
 <script src="resources/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="resources/vendor/headroom.js/dist/headroom.min.js"></script>
 <script src="resources/vendor/onscreen/dist/on-screen.umd.min.js"></script>
-
-
-
 <!-- NoUISlider -->
 <script src="resources/vendor/nouislider/distribute/nouislider.min.js"></script>
-
 <!-- Bootstrap Datepicker -->
 <script src="resources/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-
 <!-- jQuery Waypoints -->
 <script src="resources/vendor/waypoints/lib/jquery.waypoints.min.js"></script>
-
 <!-- Owl acrousel -->
 <script src="resources/vendor/owl.carousel/dist/owl.carousel.min.js"></script>
-
 <!-- Smooth scroll -->
 <script src="resources/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-
 <!-- Fancybox -->
 <script src="resources/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
-
 <!-- Sticky sidebar -->
 <script src="resources/vendor/sticky-sidebar/dist/sticky-sidebar.min.js"></script>
-
 <!-- Mapbox & Leaflet.js -->
 <script src="resources/vendor/leaflet/dist/leaflet.js"></script>
-
 <!-- Chartist -->
 <script src="resources/vendor/chartist/dist/chartist.min.js"></script>
 <script src="resources/vendor/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-
 <!-- Vector Maps -->
 <script src="resources/vendor/jqvmap/dist/jquery.vmap.min.js"></script>
 <script src="resources/vendor/jqvmap/dist/maps/jquery.vmap.usa.js"></script>
-
 <!-- Sliderform -->
 <script src="resources/assets/js/jquery.slideform.js"></script>
-
 <!-- Spaces custom Javascript -->
 <script src="resources/assets/js/spaces.js"></script>
+<!-- ajax -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
         // 각 성별 상자 요소를 선택합니다.
         const genderBoxes = document.querySelectorAll('.gender-box');
 
         // 각 성별 상자에 클릭 이벤트 리스너를 추가합니다.
         genderBoxes.forEach(box => {
-            box.addEventListener('click', () => {
-                // 모든 성별 상자의 활성화 클래스를 제거합니다.
-                genderBoxes.forEach(b => {
-                    b.classList.remove('active');
-                });
-
-                // 클릭한 성별 상자에 활성화 클래스를 추가합니다.
-                box.classList.add('active');
-            });
-        });
+        box.addEventListener('click', () => {
+        // 모든 성별 상자의 활성화 클래스를 제거합니다.
+        genderBoxes.forEach(b => {
+        b.classList.remove('active');
     });
-    document.addEventListener("DOMContentLoaded", function() {
+
+        // 클릭한 성별 상자에 활성화 클래스를 추가합니다.
+        box.classList.add('active');
+    });
+    });
+    });
+        document.addEventListener("DOMContentLoaded", function () {
         const togglePassword = document.getElementById('togglePassword');
         const password = document.getElementById('password');
 
-        togglePassword.addEventListener('click', function() {
-            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-            password.setAttribute('type', type);
-            this.querySelector('span').classList.toggle('fa-eye-slash');
-        });
+        togglePassword.addEventListener('click', function () {
+        const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+        password.setAttribute('type', type);
+        this.querySelector('span').classList.toggle('fa-eye-slash');
+    });
     });
 
 
-    document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
         const togglePasswordConfirm = document.getElementById('togglePasswordConfirm');
         const passwordConfirm = document.getElementById('password_confirm');
 
-        togglePasswordConfirm.addEventListener('click', function() {
-            const type = passwordConfirm.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordConfirm.setAttribute('type', type);
-            this.querySelector('span').classList.toggle('fa-eye-slash');
-        });
+        togglePasswordConfirm.addEventListener('click', function () {
+        const type = passwordConfirm.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordConfirm.setAttribute('type', type);
+        this.querySelector('span').classList.toggle('fa-eye-slash');
+    });
     });
 </script>
 
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         const emailInput = document.getElementById('exampleInputIcon4');
         const passwordInput = document.getElementById('password');
         const confirmPasswordInput = document.getElementById('password_confirm');
@@ -341,7 +321,7 @@
         usernameInput.addEventListener('input', checkUsernameAvailability);
 
         // 폼 제출 시 유효성 검사 수행
-        form.addEventListener('submit', function(event) {
+        form.addEventListener('submit', function (event) {
             checkEmailValidity();
             checkPasswordMatch();
             checkUsernameAvailability();
@@ -354,6 +334,44 @@
         });
     });
 </script>
+<script>
+    function CheckByNickname() {
+        var member_nickname = $("#member_nickname").val();
+
+        $.ajax({
+            url: "/signup/checkNickname",
+            method: "POST",
+            data: { member_nickname: member_nickname },
+            success: function(response) {
+                if (response) {
+                    alert("중복된 닉네임입니다.");
+                } else {
+                    alert("사용 가능한 닉네임입니다.");
+                }
+            }
+        });
+    }
+</script>
+
+<script>
+    function CheckByEmail() {
+        var member_email = $("#member_email").val();
+
+        $.ajax({
+            url: "/signup/checkemail",
+            method: "POST",
+            data: { member_email: member_email },
+            success: function(response) {
+                if (response) {
+                    alert("중복된 이메일입니다.");
+                } else {
+                    alert("사용 가능한 이메일입니다.");
+                }
+            }
+        });
+    }
+</script>
+
 
 
 </body>

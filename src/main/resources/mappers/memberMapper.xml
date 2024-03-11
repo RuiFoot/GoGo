@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.gogo.login.dao.LoginDAO">
+    <select id="getAllMember" parameterType="String" resultType="com.example.gogo.login.vo.LoginVO">
+        select *
+        from MEMBER
+        where "member_email" = #{member_email}
+    </select>
+</mapper>

@@ -27,10 +27,10 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-6 py-5 p-xl-5">
-            <h1 class="text-serif mb-4">${message}</h1>
+            <h1 class="text-serif mb-4">기역기역</h1>
             <hr class="my-4">
 
-            <form action="#">
+            <form id="myForm">
                 <div class="row">
 
                     <div class="col-xl-4 col-md-6 mb-4">
@@ -84,6 +84,7 @@
                                     success: function(data) {
                                         console.log(data);
                                         $('#form_sgg').empty(); // 기존 옵션 제거
+                                        $('#form_sgg').append('<option value="all">전체</option>')
                                         $.each(data, function(index, area){
                                             $('#form_sgg').append('<option value="' + area.sigungu + '">' + area.sigungu + '</option>');
                                         });
@@ -165,7 +166,7 @@
                     </div>
 
                     <div class="col-6 mb-4">
-                        <button class="btn btn-primary" type="submit"> <i class="fas fa-filter me-1"></i>search                </button>
+                        <button id="submitBtn" class="btn btn-primary" type="submit"> <i class="fas fa-filter me-1"></i>search                </button>
                     </div>
 
 
@@ -176,6 +177,51 @@
                 </div>
 
             </form>
+
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $('#submitBtn').click(function(event) {
+                        event.preventDefault(); // Form submission prevented to control AJAX request
+
+                        // Initialize data object
+                        var formData = {
+                            // Include default filters
+                            search: $('#form_search').val(),
+                            sido: $('#form_sido').val(),
+                            sigungu: $('#form_sgg').val(),
+                            checkboxes: []
+                        };
+
+                        // If moreFilters is expanded, include its data
+                        if ($('#moreFilters').hasClass('show')) {
+                            // Include moreFilters data
+                            $('input[type=checkbox]').each(function() {
+                                console.log($(this).is(':checked'));
+                                if ($(this).is(':checked')) {
+                                    formData.checkboxes.push($(this).attr('name'));
+                                }
+                            });
+                            console.log(formData.checkboxes)
+                            formData.pricefrom = $('#slider-snap-input-from').val();
+                            formData.priceto = $('#slider-snap-input-to').val();
+                        }
+
+                        // AJAX request
+                        $.ajax({
+                            type: 'GET',
+                            url: '/getList',
+                            data: formData,
+                            dataType: 'json', // 요청한 데이터가 JSON 형식임을 명시
+                            success: function(data) {
+                                console.log(data);
+                                // Further processing if needed
+                            }
+                        });
+                    });
+                });
+
+
+            </script>
             <hr class="my-4">
 
 
@@ -197,6 +243,8 @@
             <!-- list 생성 창 => 데이터를 가져온 후 내보내게 할 예정 -->
 
             <div class="row">
+
+
                 <!-- venue item-->
                 <div class="col-sm-6 mb-5 hover-animate" data-marker-id="59c0c8e33b1527bfe2abaf92">
                     <div class="card h-100 border-0 shadow">
@@ -226,8 +274,6 @@
                         </div>
                     </div>
                 </div>
-
-
 
             </div>
 

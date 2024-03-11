@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="@175.126.145.185">
   <database-model serializer="dbm" dbms="ORACLE" family-id="ORACLE" format-version="4.51">
-    <root id="1"/>
+    <root id="1">
+      <ServerVersion>11.2.0.1.0</ServerVersion>
+    </root>
     <schema id="2" parent="1" name="ANONYMOUS">
       <ObjectId>46</ObjectId>
     </schema>
@@ -889,8 +891,8 @@
     </table>
     <table id="278" parent="109" name="MEMBER">
       <CreatedTimestamp>2024-03-06.00:05:54</CreatedTimestamp>
-      <DetailsLevel>3</DetailsLevel>
-      <ModifiedTimestamp>2024-03-06.00:05:54</ModifiedTimestamp>
+      <DetailsLevel>2</DetailsLevel>
+      <ModifiedTimestamp>2024-03-07.23:31:14</ModifiedTimestamp>
       <ObjectId>146129</ObjectId>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
@@ -39975,27 +39977,37 @@
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="5185" parent="278" name="password">
+    <column id="5185" parent="278" name="member_pw">
       <DasType>VARCHAR2(100 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="5186" parent="278" name="name">
+    <column id="5186" parent="278" name="member_name">
       <DasType>VARCHAR2(100 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="5187" parent="278" name="email">
+    <column id="5187" parent="278" name="member_email">
       <DasType>VARCHAR2(100 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="5188" parent="278" name="id">
+    <column id="5188" parent="278" name="member_nickname">
       <DasType>VARCHAR2(100 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <index id="5189" parent="278" name="PK_MEMBER">
+    <column id="5189" parent="278" name="member_gender">
+      <DasType>VARCHAR2(20 byte)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <column id="5190" parent="278" name="member_birth">
+      <DasType>DATE|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>7</Position>
+    </column>
+    <index id="5191" parent="278" name="PK_MEMBER">
       <ColNames>member_no</ColNames>
       <CreatedTimestamp>2024-03-06.00:05:54</CreatedTimestamp>
       <ModifiedTimestamp>2024-03-06.00:05:54</ModifiedTimestamp>
@@ -40003,45 +40015,45 @@
       <Unique>1</Unique>
       <TablespaceName>USERS</TablespaceName>
     </index>
-    <key id="5190" parent="278" name="PK_MEMBER">
+    <key id="5192" parent="278" name="PK_MEMBER">
       <InitiallyDeferred>1</InitiallyDeferred>
       <ModifiedTimestamp>2024-03-06.00:05:54</ModifiedTimestamp>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK_MEMBER</UnderlyingIndexName>
     </key>
-    <column id="5191" parent="279" name="member_no">
+    <column id="5193" parent="279" name="member_no">
       <DasType>NUMBER(*)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="5192" parent="279" name="member_address">
+    <column id="5194" parent="279" name="member_address">
       <DasType>VARCHAR2(255 byte)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="5193" parent="279" name="member_Age">
+    <column id="5195" parent="279" name="member_Age">
       <DasType>VARCHAR2(255 byte)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="5194" parent="279" name="des">
+    <column id="5196" parent="279" name="des">
       <DasType>VARCHAR2(255 byte)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="5195" parent="279" name="date">
+    <column id="5197" parent="279" name="date">
       <DasType>VARCHAR2(255 byte)|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="5196" parent="279" name="what">
+    <column id="5198" parent="279" name="what">
       <DasType>VARCHAR2(255 byte)|0s</DasType>
       <Position>6</Position>
     </column>
-    <foreign-key id="5197" parent="279" name="FK_MEMBER_TO_MYPAGE_1">
+    <foreign-key id="5199" parent="279" name="FK_MEMBER_TO_MYPAGE_1">
       <ColNames>member_no</ColNames>
       <ModifiedTimestamp>2024-03-06.00:05:54</ModifiedTimestamp>
       <OnDelete>restrict</OnDelete>
       <RefKeyName>PK_MEMBER</RefKeyName>
       <RefTableName>MEMBER</RefTableName>
     </foreign-key>
-    <index id="5198" parent="279" name="PK_MYPAGE">
+    <index id="5200" parent="279" name="PK_MYPAGE">
       <ColNames>member_no</ColNames>
       <CreatedTimestamp>2024-03-06.00:05:54</CreatedTimestamp>
       <ModifiedTimestamp>2024-03-06.00:05:54</ModifiedTimestamp>
@@ -40049,54 +40061,54 @@
       <Unique>1</Unique>
       <TablespaceName>USERS</TablespaceName>
     </index>
-    <key id="5199" parent="279" name="PK_MYPAGE">
+    <key id="5201" parent="279" name="PK_MYPAGE">
       <InitiallyDeferred>1</InitiallyDeferred>
       <ModifiedTimestamp>2024-03-06.00:05:54</ModifiedTimestamp>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK_MYPAGE</UnderlyingIndexName>
     </key>
-    <column id="5200" parent="280" name="Key">
+    <column id="5202" parent="280" name="Key">
       <DasType>VARCHAR2(255 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="5201" parent="280" name="event_no">
+    <column id="5203" parent="280" name="event_no">
       <DasType>VARCHAR2(255 byte)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="5202" parent="280" name="member_no">
+    <column id="5204" parent="280" name="member_no">
       <DasType>NUMBER(*)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="5203" parent="280" name="Field">
+    <column id="5205" parent="280" name="Field">
       <DasType>VARCHAR2(255 byte)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="5204" parent="280" name="create_date">
+    <column id="5206" parent="280" name="create_date">
       <DasType>VARCHAR2(255 byte)|0s</DasType>
       <Position>5</Position>
     </column>
-    <column id="5205" parent="280" name="Field2">
+    <column id="5207" parent="280" name="Field2">
       <DasType>NUMBER(*)|0s</DasType>
       <Position>6</Position>
     </column>
-    <foreign-key id="5206" parent="280" name="FK_FASTIVAL_TO_Untitled8_1">
+    <foreign-key id="5208" parent="280" name="FK_FASTIVAL_TO_Untitled8_1">
       <ColNames>event_no</ColNames>
       <ModifiedTimestamp>2024-03-06.00:05:54</ModifiedTimestamp>
       <OnDelete>restrict</OnDelete>
       <RefKeyName>PK_FASTIVAL</RefKeyName>
       <RefTableName>FASTIVAL</RefTableName>
     </foreign-key>
-    <foreign-key id="5207" parent="280" name="FK_MEMBER_TO_Untitled8_1">
+    <foreign-key id="5209" parent="280" name="FK_MEMBER_TO_Untitled8_1">
       <ColNames>member_no</ColNames>
       <ModifiedTimestamp>2024-03-06.00:05:54</ModifiedTimestamp>
       <OnDelete>restrict</OnDelete>
       <RefKeyName>PK_MEMBER</RefKeyName>
       <RefTableName>MEMBER</RefTableName>
     </foreign-key>
-    <index id="5208" parent="280" name="PK_UNTITLED8">
+    <index id="5210" parent="280" name="PK_UNTITLED8">
       <ColNames>Key
 event_no
 member_no</ColNames>
@@ -40106,17 +40118,17 @@ member_no</ColNames>
       <Unique>1</Unique>
       <TablespaceName>USERS</TablespaceName>
     </index>
-    <key id="5209" parent="280" name="PK_UNTITLED8">
+    <key id="5211" parent="280" name="PK_UNTITLED8">
       <InitiallyDeferred>1</InitiallyDeferred>
       <ModifiedTimestamp>2024-03-06.00:05:54</ModifiedTimestamp>
       <Primary>1</Primary>
       <UnderlyingIndexName>PK_UNTITLED8</UnderlyingIndexName>
     </key>
-    <column id="5210" parent="281" name="SIDO">
+    <column id="5212" parent="281" name="SIDO">
       <DasType>VARCHAR2(26 byte)|0s</DasType>
       <Position>1</Position>
     </column>
-    <column id="5211" parent="281" name="SIGUNGU">
+    <column id="5213" parent="281" name="SIGUNGU">
       <DasType>VARCHAR2(26 byte)|0s</DasType>
       <Position>2</Position>
     </column>

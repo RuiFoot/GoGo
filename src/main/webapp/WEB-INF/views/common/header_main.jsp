@@ -58,8 +58,8 @@
                     </div>
                 </form>
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="sign_in.html">Sign in</a></li>
-                    <li class="nav-item"><a class="nav-link" href="sign_up.html">Sign up</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/login">Sign in</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/signup">Sign up</a></li>
                 </ul>
                 <!--
                 <div class="dropdown nav d-none d-sm-block order-lg-3"><a class="nav-link d-flex align-items-center p-0" href="#" data-bs-toggle="dropdown" aria-expanded="false"><img class="border rounded-circle" src="resources/assets/mypage/img/avatar/01.jpg" width="48" alt="Isabella Bocouse">

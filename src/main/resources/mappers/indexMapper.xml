@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="com.example.gogo.index.dao.HomeDAO">
+    <resultMap type="com.example.gogo.index.vo.FestivalListVO" id="festivalResultMap">
+        <id property="id" column="EVENT_NO"/>
+        <result property="name" column="행사명"/>
+        <result property="place" column="장소"/>
+        <result property="category" column="행사내용"/>
+        <result property="startDay" column="행사시작일"/>
+        <result property="endDay" column="행사종료일자"/>
+        <result property="startTime" column="행사시작시간"/>
+        <result property="endTime" column="행사종료시간"/>
+        <result property="payInfo" column="요금정보"/>
+        <result property="organizationInstitution" column="주관기관명"/>
+        <result property="hostInstitution" column="주최기관명"/>
+        <result property="tel" column="전화번호"/>
+        <result property="supportingInstitution" column="후원기관명"/>
+        <result property="seat" column="객석수"/>
+        <result property="pay" column="관람요금"/>
+        <result property="age" column="입장연령"/>
+        <result property="discountInfo" column="할인정보"/>
+        <result property="precautions" column="유의사항"/>
+        <result property="webAddress" column="홈페이지주소"/>
+        <result property="reservation" column="예매정보"/>
+        <result property="car" column="주차장보유여부"/>
+        <result property="roadAddress" column="소재지도로명주소"/>
+        <result property="numberAddress" column="소재지지번주소"/>
+        <result property="lat" column="위도"/>
+        <result property="lng" column="경도"/>
+        <result property="dataUpdate" column="데이터기준일자"/>
+        <result property="institutionCode" column="제공기관코드"/>
+        <result property="institution" column="제공기관명"/>
+    </resultMap>
+
+
+
+    <select id="getAllArea" parameterType="String" resultType="com.example.gogo.index.vo.AreaVO">
+        SELECT sido,sigungu
+        FROM SIDO
+        WHERE sido = #{sido}
+    </select>
+
+
+    <select id="getList" parameterType="Paging" resultMap="festivalResultMap">
+        SELECT *
+        From data
+        <where>
+            <if test="data.search != null and data.search != ''">
+                And INSTR(행사명, #{data.search}) > 0
+            </if>
+            <if test="data.sido != 'all'">
+                AND INSTR(소재지도로명주소, #{data.sido}) > 0
+                <if test="data.sigungu != 'all'">
+                    AND INSTR(소재지도로명주소, #{data.sigungu}) > 0
+                </if>
+            </if>
+        </where>
+    </select>
+
+    <select id="getListCount" parameterType="formDataVo" resultType="int">
+        SELECT COUNT(*) AS CNT
+        FROM data
+        <where>
+            <if test="formData.search != null and formData.search != ''">
+                And INSTR(행사명, #{formData.search}) > 0
+            </if>
+            <if test="formData.sido != 'all'">
+                AND INSTR(소재지도로명주소, #{formData.sido}) > 0
+                <if test="formData.sigungu != 'all'">
+                    AND INSTR(소재지도로명주소, #{formData.sigungu}) > 0
+                </if>
+            </if>
+        </where>
+    </select>
+
+</mapper>
+
+

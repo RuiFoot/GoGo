@@ -4,8 +4,46 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa1c2e0e-4c97-49db-bb0c-54cd0931a335" name="변경" comment="240306&#10;인덱스 페이지 시/구, 시/군/구 ajax를 통한 동적 움직임 추가&#10;pom.xml 버전 체크">
+    <list default="true" id="aa1c2e0e-4c97-49db-bb0c-54cd0931a335" name="변경" comment="240307&#10;안 들어간 파일 추가">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/vo/FestivalListVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/vo/FormDataVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/vo/Paging.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/login/dao/LoginDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/login/service/LoginService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/login/service/LoginServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/login/vo/LoginVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/signup/dao/SignUpDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/signup/service/SignUpService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/signup/service/SignUpServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/signup/vo/SignUpVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/SignUpMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/memberMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d0b6a2f0-c2a1-4b02-bab4-da2dcccc9883.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d0b6a2f0-c2a1-4b02-bab4-da2dcccc9883.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/orai18n.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/ojdbc8.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/GogoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/GogoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/dao/HomeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/dao/HomeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/service/HomeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/service/HomeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/service/HomeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/service/HomeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/login/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/login/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/signup/controller/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/signup/controller/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/index/areaMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/indexMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/header_main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/header_main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/signup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/signup.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gogo/GogoApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gogo/GogoApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gogo/index/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gogo/index/controller/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gogo/index/dao/HomeDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gogo/index/dao/HomeDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gogo/index/service/HomeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gogo/index/service/HomeService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gogo/index/service/HomeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gogo/index/service/HomeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gogo/login/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gogo/login/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gogo/signup/controller/SignUpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gogo/signup/controller/SignUpController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mappers/index/areaMapper.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,51 +100,51 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Spring Boot.GogoApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Tomcat 서버.Tomcat 9.0.75.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/bootcamp/semiproject/workspace/orai18n.jar&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;라이브러리&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.35287356&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.GogoApplication.executor": "Run",
+    "Tomcat 서버.Tomcat 9.0.75.executor": "Run",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/bootcamp/semiproject/workspace/gogo/src/main/webapp/WEB-INF/lib/orai18n.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "모듈",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.35287356",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;oracle&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "oracle"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\bootcamp\세미프로젝트\workspace\gogo\src\main\java\com\example\gogo\detail" />
-      <recent name="D:\bootcamp\세미프로젝트\workspace\gogo\src\main\java\com\example\gogo\signup" />
-      <recent name="D:\bootcamp\세미프로젝트\workspace\gogo\src\main\java\com\example\gogo\mypage" />
-      <recent name="D:\bootcamp\세미프로젝트\workspace\gogo\src\main\resources\static" />
-      <recent name="D:\bootcamp\세미프로젝트\workspace\gogo\src\main\webapp\WEB-INF\resources" />
+      <recent name="D:\bootcamp\semiproject\workspace\gogo\src\main\java\com\example\gogo\signup\vo" />
+      <recent name="D:\bootcamp\semiproject\workspace\gogo\src\main\java\com\example\gogo\signup\service" />
+      <recent name="D:\bootcamp\semiproject\workspace\gogo\src\main\java\com\example\gogo\signup\dao" />
+      <recent name="D:\bootcamp\semiproject\workspace\gogo\src\main\resources\mappers" />
+      <recent name="D:\bootcamp\semiproject\workspace\gogo\src\main\java\com\example\gogo\login\vo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\bootcamp\semiproject\workspace\gogo\src\main\resources\mappers" />
+      <recent name="D:\bootcamp\semiproject\workspace\gogo\src\main\resources\mappers\login" />
       <recent name="D:\bootcamp\세미프로젝트\workspace\gogo\src\main\resources\static\img" />
       <recent name="D:\bootcamp\세미프로젝트\workspace\gogo\src\main\resources\static" />
       <recent name="D:\bootcamp\세미프로젝트\workspace\gogo\src\main\webapp\WEB-INF\resources" />
-      <recent name="D:\bootcamp\세미프로젝트\workspace\gogo\src\main" />
-      <recent name="D:\bootcamp\세미프로젝트\workspace\gogo\src\main\resources\webapp\WEB-INF" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.GogoApplication">
@@ -225,6 +263,12 @@
       <workItem from="1709659724386" duration="8322000" />
       <workItem from="1709699752623" duration="1998000" />
       <workItem from="1709702603101" duration="14000" />
+      <workItem from="1709785611086" duration="4049000" />
+      <workItem from="1709794967933" duration="1197000" />
+      <workItem from="1709798179018" duration="3282000" />
+      <workItem from="1709863389592" duration="7462000" />
+      <workItem from="1709881768213" duration="2246000" />
+      <workItem from="1710116061940" duration="22861000" />
     </task>
     <task id="LOCAL-00001" summary="기역기역 스프링부트 프로젝트 세팅">
       <option name="closed" value="true" />
@@ -266,7 +310,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709668012175</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="240307&#10;안 들어간 파일 추가">
+      <option name="closed" value="true" />
+      <created>1709785736227</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1709785736227</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,6 +360,7 @@
     <MESSAGE value="기역기역 스프링부트 프로젝트 세팅" />
     <MESSAGE value="240305&#10;HomeController ModelAndView 체크&#10;jstl 추가" />
     <MESSAGE value="240306&#10;인덱스 페이지 시/구, 시/군/구 ajax를 통한 동적 움직임 추가&#10;pom.xml 버전 체크" />
-    <option name="LAST_COMMIT_MESSAGE" value="240306&#10;인덱스 페이지 시/구, 시/군/구 ajax를 통한 동적 움직임 추가&#10;pom.xml 버전 체크" />
+    <MESSAGE value="240307&#10;안 들어간 파일 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="240307&#10;안 들어간 파일 추가" />
   </component>
 </project>
