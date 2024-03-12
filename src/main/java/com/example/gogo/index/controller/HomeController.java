@@ -42,7 +42,6 @@ public class HomeController {
         // 결과를 JSON 또는 다른 형식으로 반환할 수 있습니다.
 
         System.out.println(formDataVo.toString());
-
         return ResponseEntity.ok(homeServiceImpl.getList(formDataVo, pageable));
 
     }

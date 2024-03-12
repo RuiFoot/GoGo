@@ -72,27 +72,6 @@
                         </select>
                     </div>
 
-                    <script type="text/javascript">
-                        $(document).ready(function(){
-                            $('#form_sido').change(function(){
-                                var selectedSido = $(this).val();
-                                $.ajax({
-                                    type: 'GET',
-                                    url: '/getArea',
-                                    data: { sido: selectedSido },
-                                    dataType: 'json', // 요청한 데이터가 JSON 형식임을 명시
-                                    success: function(data) {
-                                        console.log(data);
-                                        $('#form_sgg').empty(); // 기존 옵션 제거
-                                        $('#form_sgg').append('<option value="all">전체</option>')
-                                        $.each(data, function(index, area){
-                                            $('#form_sgg').append('<option value="' + area.sigungu + '">' + area.sigungu + '</option>');
-                                        });
-                                    }
-                                });
-                            });
-                        });
-                    </script>
 
                     <!-- 더 다양한 필더를 활용하려면 이것 활용 -->
 
@@ -179,7 +158,91 @@
             </form>
 
             <script type="text/javascript">
+                function formatISODate(isoDate) {
+                    var date = new Date(isoDate); // ISO 8601 형식의 날짜를 Date 객체로 변환
+
+                    // Date 객체에서 원하는 형식으로 날짜와 시간을 추출
+                    var year = date.getFullYear();
+                    var month = ('0' + (date.getMonth() + 1)).slice(-2); // 월은 0부터 시작하므로 +1
+                    var day = ('0' + date.getDate()).slice(-2); // 일
+                    var hours = ('0' + date.getHours()).slice(-2); // 시간
+                    var minutes = ('0' + date.getMinutes()).slice(-2); // 분
+
+                    // 변환된 형식으로 날짜와 시간을 반환
+                    var formattedDate = year + '-' + month + '-' + day;
+                    var formattedTime = hours + ':' + minutes;
+
+                    return { date: formattedDate, time: formattedTime };
+                }
+
+
                 $(document).ready(function(){
+
+                    // sido change 할 때
+                    $('#form_sido').change(function(){
+
+                        var selectedSido = $(this).val();
+                        // 로컬 스토리지에 저장
+                        localStorage.setItem('sido', selectedSido);
+
+                        $.ajax({
+                            type: 'GET',
+                            url: '/getArea',
+                            data: { sido: selectedSido },
+                            dataType: 'json', // 요청한 데이터가 JSON 형식임을 명시
+                            success: function(data) {
+                                console.log(data);
+                                $('#form_sgg').empty(); // 기존 옵션 제거
+                                $('#form_sgg').append('<option value="all">전체</option>');
+
+                                var keywords = []; // 키워드들을 담을 배열
+
+                                $.each(data, function(index, area){
+                                    $('#form_sgg').append('<option value="' + area.sigungu + '">' + area.sigungu + '</option>');
+                                    keywords.push(area.sigungu);
+                                });
+                                // 키워드 배열을 로컬 스토리지에 저장 (문자열로 변환하여 저장)
+                                localStorage.setItem('keywords', JSON.stringify(keywords));
+                            }
+                        });
+                    });
+
+                    // #form_search 값이 변경될 때
+                    $('#form_search').change(function(){
+                        var keyword = $(this).val();
+                        localStorage.setItem('keyword', keyword); // 로컬 스토리지에 저장
+                    });
+
+                    // #form_sgg 값이 변경될 때
+                    $('#form_sgg').change(function(){
+                        var selectedSgg = $(this).val();
+                        localStorage.setItem('sgg', selectedSgg); // 로컬 스토리지에 저장
+                    });
+
+                    // 페이지 로드될 때 로컬 스토리지의 값을 설정합니다.
+                    var storedSido = localStorage.getItem('sido');
+                    if (storedSido) {
+                        $('#form_sido').val(storedSido);
+                    }
+
+                    var storedKeyword = localStorage.getItem('keyword');
+                    if (storedKeyword) {
+                        $('#form_search').val(storedKeyword);
+                    }
+
+                    var storedKeywords = localStorage.getItem('keywords');
+                    if (storedKeywords) {
+                        var keywords = JSON.parse(storedKeywords); // 문자열을 배열로 변환
+                        keywords.forEach(function(keyword) {
+                            $('#form_sgg').append('<option value="' + keyword + '">' + keyword + '</option>');
+                        });
+                    }
+
+                    var storedSgg = localStorage.getItem('sgg');
+                    if (storedSgg) {
+                        $('#form_sgg').val(storedSgg);
+                    }
+
                     $('#submitBtn').click(function(event) {
                         event.preventDefault(); // Form submission prevented to control AJAX request
 
@@ -213,12 +276,54 @@
                             data: formData,
                             dataType: 'json', // 요청한 데이터가 JSON 형식임을 명시
                             success: function(data) {
-                                console.log(data);
-                                // Further processing if needed
+                                $('#createList').empty(); // 기존 리스트 내용을 비웁니다.
+
+                                $('#total').text(data.totalElements);
+
+
+                                data.content.forEach(function(item) {
+
+                                    var formattedStartDay = formatISODate(item.startDay);
+                                    var formattedEndDay = formatISODate(item.endDay);
+
+                                    var star = '<!-- warning = 노란 별, gray = 회색 별 인기도 계산을 한 후 p태그에 별을 뿌리면 될 듯-->' +
+                                        '<p class="mb-2 text-xs"><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-gray-300"></i></p>'
+
+
+                                    var listItem = '<div class="col-sm-6 mb-5 hover-animate" data-marker-id="' + item.id + '">' +
+                                        '<div class="card h-100 border-0 shadow">' +
+                                        '<div class="card-img-top overflow-hidden dark-overlay bg-cover" style="background-image: url(resources/img/index/photo/restaurant-1430931071372-38127bd472b8.jpg); min-height: 200px;">' +
+                                        '<a class="tile-link" href="/detail"></a>' +
+                                        '<div class="card-img-overlay-bottom z-index-20">' +
+                                        '<h5 class="text-white text-shadow">' + item.name + '</h5>' +
+                                        '<h7 class="text-white text-shadow">' + item.place + '</h7>' + star +
+                                        '</div>' +
+                                        '<div class="card-img-overlay-top d-flex justify-content-between align-items-center">' +
+                                        '   <div class="badge badge-transparent badge-pill px-3 py-2">' + item.category + '</div><a class="card-fav-icon position-relative z-index-40">'+
+                                        '    <svg class="svg-icon text-white">'+
+                                        '     <use xlink:href="#heart-1"> </use>'+
+                                        '   </svg></a>'+
+                                        '</div>'+
+                                        '</div>' +
+                                        '<div class="card-body">' +
+                                        '<p class="text-sm mb-0">' + formattedStartDay.date + ' ~ ' + formattedEndDay.date + '</p>' +
+                                        '<p class="text-sm text-muted mb-0">' + item.startTime + ' ~ ' + item.endTime + '</p>' +
+                                        '<p class="text-sm text-muted mb-0">' + item.numberAddress + '</p>' +
+                                        '<p class="text-sm mb-0"><a class="me-1" href="' + item.webAddress + '">홈페이지</a></p>' +
+                                        '</div>' +
+                                        '</div>' +
+                                        '</div>';
+                                    $('#createList').append(listItem); // 리스트를 페이지에 추가합니다.
+
+                                });
+
                             }
                         });
                     });
+
                 });
+
+
 
 
             </script>
@@ -228,7 +333,7 @@
             <!-- 검색 결과 창 -->
             <div class="d-flex justify-content-between align-items-center flex-column flex-md-row mb-4">
                 <div class="me-3">
-                    <p class="mb-3 mb-md-0"><strong>12</strong> results found</p>
+                    <p class="mb-3 mb-md-0"><strong id = "total">0</strong> results found</p>
                 </div>
                 <div>
                     <label class="form-label me-2" for="form_sort">Sort by</label>
@@ -242,20 +347,19 @@
 
             <!-- list 생성 창 => 데이터를 가져온 후 내보내게 할 예정 -->
 
-            <div class="row">
+            <div id="createList" class="row">
 
-
-                <!-- venue item-->
+<!--
+                 venue item
                 <div class="col-sm-6 mb-5 hover-animate" data-marker-id="59c0c8e33b1527bfe2abaf92">
                     <div class="card h-100 border-0 shadow">
-                        <!-- style="background-image:에 이미지 경로 있음 -->
+
                         <div class="card-img-top overflow-hidden dark-overlay bg-cover" style="background-image: url(resources/img/index/photo/restaurant-1430931071372-38127bd472b8.jpg); min-height: 200px;"><a class="tile-link" href="detail.html"></a>
                             <div class="card-img-overlay-bottom z-index-20">
                                 <h5 class="text-white text-shadow">SAC on Screen」 - 연극 보물섬</h5>
                                 <h7 class="text-white text-shadow">남동소래아트홀 소래극장</h7>
-                                <!-- warning = 노란 별, gray = 회색 별 인기도 계산을 한 후 p태그에 별을 뿌리면 될 듯-->
-                                <p class="mb-2 text-xs"><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-gray-300"></i>
-                                </p>
+
+                                <p class="mb-2 text-xs"><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-gray-300"></i></p>
                             </div>
                             <div class="card-img-overlay-top d-flex justify-content-between align-items-center">
                                 <div class="badge badge-transparent badge-pill px-3 py-2">영상 프로그램</div><a class="card-fav-icon position-relative z-index-40" href="javascript: void();">
@@ -265,16 +369,16 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <!--mb = 글자간 간격-->
+
                             <p class="text-sm mb-0">2019-11-05 ~ 2019-11-05</p>
                             <p class="text-sm text-muted mb-0"> 오전 9:30 ~ 오후 4:00 </p>
                             <p class="text-sm text-muted mb-0"> 인천광역시 남동구 아암대로1437번길 32(논현동)</p>
-                            <!--<p class="text-sm text-muted text-uppercase mb-1">By <a href="#" class="text-dark">Matt Damon</a></p>-->
+                            <p class="text-sm text-muted text-uppercase mb-1">By <a href="#" class="text-dark">Matt Damon</a></p>
                             <p class="text-sm mb-0"><a class="me-1" href="http://www.namdongarts.kr">홈페이지</a></p>
                         </div>
                     </div>
                 </div>
-
+-->
             </div>
 
             <!-- 페이지 목록 체크 -->

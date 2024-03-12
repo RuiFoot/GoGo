@@ -16,5 +16,4 @@ public class FormDataVO {
     private List<String> checkboxes;
     private String pricefrom;
     private String priceto;
-
 }

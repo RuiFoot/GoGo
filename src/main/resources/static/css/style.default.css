@@ -16480,7 +16480,7 @@ button.mfp-close {
 }
 
 .table-hover tbody tr.no-stripe {
-  --bs-table-accent-bg: $white;
+  --bs-table-accent-bg: white;
 }
 
 .table-hover tbody tr.no-hover:hover {

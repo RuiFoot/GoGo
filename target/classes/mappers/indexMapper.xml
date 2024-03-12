@@ -11,10 +11,10 @@
         <result property="name" column="행사명"/>
         <result property="place" column="장소"/>
         <result property="category" column="행사내용"/>
-        <result property="startDay" column="행사시작일"/>
+        <result property="startDay" column="행사시작일자"/>
         <result property="endDay" column="행사종료일자"/>
-        <result property="startTime" column="행사시작시간"/>
-        <result property="endTime" column="행사종료시간"/>
+        <result property="startTime" column="행사시작시각"/>
+        <result property="endTime" column="행사종료시각"/>
         <result property="payInfo" column="요금정보"/>
         <result property="organizationInstitution" column="주관기관명"/>
         <result property="hostInstitution" column="주최기관명"/>
@@ -37,7 +37,7 @@
         <result property="institution" column="제공기관명"/>
     </resultMap>
 
-    
+
 
     <select id="getAllArea" parameterType="String" resultType="com.example.gogo.index.vo.AreaVO">
         SELECT sido,sigungu
@@ -47,19 +47,31 @@
 
 
     <select id="getList" parameterType="Paging" resultMap="festivalResultMap">
-        SELECT *
-        From data
-        <where>
-            <if test="data.search != null and data.search != ''">
-                And INSTR(행사명, #{data.search}) > 0
-            </if>
-            <if test="data.sido != 'all'">
-                AND INSTR(소재지도로명주소, #{data.sido}) > 0
-                <if test="data.sigungu != 'all'">
-                    AND INSTR(소재지도로명주소, #{data.sigungu}) > 0
+        <![CDATA[
+    SELECT *
+    FROM (
+        SELECT A.*, ROWNUM rn
+        FROM (
+            SELECT *
+            FROM DATA ]]>
+            <where>
+                <if test="data.search != null and data.search != ''">
+                    AND INSTR(행사명, #{data.search}) > 0
                 </if>
-            </if>
-        </where>
+                <if test="data.sido != 'all'">
+                    AND INSTR(소재지도로명주소, #{data.sido}) > 0
+                    <if test="data.sigungu != 'all'">
+                        AND INSTR(소재지도로명주소, #{data.sigungu}) > 0
+                    </if>
+                </if>
+            </where>
+        <![CDATA[
+            ORDER BY 행사종료일자 DESC
+        ) A
+        WHERE ROWNUM <= #{pageable.size}
+    )
+    WHERE rn > #{pageable.offset}
+    ]]>
     </select>
 
     <select id="getListCount" parameterType="formDataVo" resultType="int">
