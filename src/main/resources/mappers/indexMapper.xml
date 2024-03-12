@@ -68,7 +68,7 @@
         <![CDATA[
             ORDER BY 행사종료일자 DESC
         ) A
-        WHERE ROWNUM <= #{pageable.size}
+        WHERE ROWNUM <= #{pageable.offset}+#{pageable.size}
     )
     WHERE rn > #{pageable.offset}
     ]]>
