@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@include file="common/header_main.jsp"%>
 
     <meta charset="utf-8">
@@ -32,6 +33,27 @@
 <!-- Body-->
 <body>
 
+<script>
+
+    function formatISODate(isoDate) {
+        var date = new Date(isoDate); // ISO 8601 형식의 날짜를 Date 객체로 변환
+
+        // Date 객체에서 원하는 형식으로 날짜와 시간을 추출
+        var year = date.getFullYear();
+        var month = ('0' + (date.getMonth() + 1)).slice(-2); // 월은 0부터 시작하므로 +1
+        var day = ('0' + date.getDate()).slice(-2); // 일
+        var hours = ('0' + date.getHours()).slice(-2); // 시간
+        var minutes = ('0' + date.getMinutes()).slice(-2); // 분
+
+        // 변환된 형식으로 날짜와 시간을 반환
+        var formattedDate = year + '-' + month + '-' + day;
+        var formattedTime = hours + ':' + minutes;
+
+        return { date: formattedDate, time: formattedTime };
+    }
+
+</script>
+
 
 <!-- Main content-->
 <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
@@ -43,8 +65,8 @@
     <section class="pt-6 pb-lg-6 pb-sm-5 pb-4 bg-faded-primary jarallax" data-jarallax data-speed="0.8">
         <div class="jarallax-img" style="background-image: url(resources/assets/detailpage/img/online-courses/events/single/shapes/01.svg);"></div>
         <div class="container pt-lg-6 pt-md-5 py-4">
-            <h3 class="h6 mb-2 text-uppercase text-primary text-center">부산 광안리</h3>
-            <h1 class="col-lg-10 mx-auto mb-0 text-center">드론축제</h1>
+            <h3 class="h6 mb-2 text-uppercase text-primary text-center">${festivalList.category}</h3>
+            <h1 class="col-lg-10 mx-auto mb-0 text-center">${festivalList.name}</h1>
         </div>
     </section>
 
@@ -126,18 +148,23 @@
                     <div class="card-body">
                         <div class="mb-3 pt-3 px-2">
                             <h6 class="mb-0 fs-sm text-uppercase">Time</h6>
-                            <h4 class="mb-2 text-primary">August 5, 11:00 – 14:00</h4>
-                            <p class="mb-0">매주 같은시간!</p>
+                            <h4 class="mb-2 text-primary">${startDay} ~ ${endDay}</h4>
+                            <p class="mb-0">${festivalList.startTime} ~ ${festivalList.endTime}</p>
                         </div>
+
                         <div class="mb-3 pt-3 px-2">
                             <h6 class="mb-0 fs-sm text-uppercase">Price</h6>
-                            <h4 class="mb-2 text-primary">Free</h4>
-                            <p class="pb-2">원하는 드론쇼는 문의주세요</p>
-                            <a href="#" class="fs-sm fw-bold text-uppercase">이건 삭제해도 될듯?</a>
+                            <h4 class="mb-2 text-primary">${festivalList.payInfo}</h4>
+                            <c:if test="${!festivalList.payInfo.equals('무료')}">
+                                <p class="pb-2">요금 정보 : ${festivalList.pay}</p>
+                            </c:if>
                         </div>
-                        <div class="mb-3 pt-4 px-2">
-                            <a href="#" class="btn btn-gradient btn-hover-shadow d-block w-100">축제 링크란</a>
+                        <div class="mb-3 pt-3 px-2">
+                            <h6 class="mb-0 fs-sm text-uppercase">precautions</h6>
+                            <p class="pb-2">${festivalList.precautions}</p>
+                            <a href="${festivalList.webAddress}" class="btn btn-outline-primary d-block w-100">홈페이지</a>
                         </div>
+
                     </div>
                 </div>
             </div>

@@ -4,17 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa1c2e0e-4c97-49db-bb0c-54cd0931a335" name="변경" comment="240312&#10;인덱스 페이지 검색 기능 : 페이징 후 리스트 목록 띄우기까지 완성.&#10;페이징 리스트는 아직 없음.&#10;mypage.jsp 오류 수정">
+    <list default="true" id="aa1c2e0e-4c97-49db-bb0c-54cd0931a335" name="변경" comment="240312&#10;인덱스 페이지 검색 기능 완성&#10;페이징 기능 완성">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/detail/dao/DetailDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/detail/service/DetailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/detail/service/DetailServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/DetailMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/orai18n.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/detail/controller/DetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/detail/controller/DetailController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/indexMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/indexMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/header_main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/header_main.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/detail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gogo/index/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gogo/index/controller/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mypage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mypage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gogo/detail/controller/DetailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gogo/detail/controller/DetailController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/mappers/indexMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/indexMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/style.default.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/style.default.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +29,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="spring-beans.schema" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="spring-beans.schema" />
       </list>
     </option>
   </component>
@@ -87,13 +92,13 @@
     "Tomcat 서버.Tomcat 9.0.75.executor": "Run",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/bootcamp/semiproject/workspace/gogo/src/main/webapp/WEB-INF/lib/orai18n.jar",
+    "last_opened_file_path": "D:/bootcamp/semiproject/workspace/orai18n.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "모듈",
+    "project.structure.last.edited": "라이브러리",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.35287356",
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
@@ -245,6 +250,11 @@
       <workItem from="1710116061940" duration="23036000" />
       <workItem from="1710163628900" duration="3176000" />
       <workItem from="1710203307939" duration="25037000" />
+      <workItem from="1710233640607" duration="87000" />
+      <workItem from="1710233874401" duration="12000" />
+      <workItem from="1710234106668" duration="328000" />
+      <workItem from="1710249629682" duration="1000" />
+      <workItem from="1710289049432" duration="11704000" />
     </task>
     <task id="LOCAL-00001" summary="기역기역 스프링부트 프로젝트 세팅">
       <option name="closed" value="true" />
@@ -310,7 +320,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710211701944</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="240312&#10;인덱스 페이지 검색 기능 완성&#10;페이징 기능 완성">
+      <option name="closed" value="true" />
+      <created>1710233695930</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1710233695930</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,6 +373,7 @@
     <MESSAGE value="240307&#10;안 들어간 파일 추가" />
     <MESSAGE value="240311&#10;Login, 회원가입 기본 기능 추가 (차세종)&#10;인덱스 페이지 검색 기능 추가 ( search까지 확인, 이후 페이징 기능 추가해서 view에 뿌릴 예정)" />
     <MESSAGE value="240312&#10;인덱스 페이지 검색 기능 : 페이징 후 리스트 목록 띄우기까지 완성.&#10;페이징 리스트는 아직 없음.&#10;mypage.jsp 오류 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="240312&#10;인덱스 페이지 검색 기능 : 페이징 후 리스트 목록 띄우기까지 완성.&#10;페이징 리스트는 아직 없음.&#10;mypage.jsp 오류 수정" />
+    <MESSAGE value="240312&#10;인덱스 페이지 검색 기능 완성&#10;페이징 기능 완성" />
+    <option name="LAST_COMMIT_MESSAGE" value="240312&#10;인덱스 페이지 검색 기능 완성&#10;페이징 기능 완성" />
   </component>
 </project>

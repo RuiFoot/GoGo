@@ -398,26 +398,6 @@
 <!-- jinuk's scrpit code -->
 
 <script>
-    /*
-    var positions = [
-        {
-            title: '제주여미지식물원',
-            latlng: new kakao.maps.LatLng(33.450701, 126.570667)
-        },
-        {
-            title: '중문색달해변',
-            latlng: new kakao.maps.LatLng(33.450701, 126.570777)
-        },
-        {
-            title: '퍼시픽랜드 수조관',
-            latlng: new kakao.maps.LatLng(33.244221, 126.417223)
-        },
-        {
-            title: '천재연폭포',
-            latlng: new kakao.maps.LatLng(33.250542, 126.416746)
-        }
-    ];
-    */
 
     // 중심좌표 기본값, 서울시청으로 해놓았음
     var defaultLat = 37.56681969769621;
@@ -430,88 +410,6 @@
     }
 
     var map = new kakao.maps.Map(container, option); // 맵 생성
-
-    /*
-        // 마커들이 다 보일수있도록 크기 계산 후 Bounds 계산
-
-        var bounds = calcBounds(positions);
-        map.setBounds(bounds);
-
-    /*
-        kakao.maps.event.addListener(map, 'rightclick', function(mouseEvent) {
-            var latlng = mouseEvent.latLng;
-
-            // 클릭한 위치의 위도 얻기
-            var lat = latlng.getLat();
-
-            // 클릭한 위치의 경도 얻기
-            var lng = latlng.getLng();
-
-            // 위도와 경도 출력
-            console.log("클릭한 위치의 위도:", lat);
-            console.log("클릭한 위치의 경도:", lng);
-
-            // 팝업 창 등을 이용하여 위도와 경도를 보여줄 수도 있습니다.
-            alert("클릭한 위치의 위도: " + lat + "\n클릭한 위치의 경도: " + lng);
-        });
-    */
-    /*
-        // 마커 이미지, 경로 설정으로 커스텀 마커 생성 가능
-        var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
-
-        // 마커 생성 및 마커 클릭 시 이벤트 리스너 (커스텀 인포윈도우 생성) 실행
-        for(var i = 0; i < positions.length; i++){
-
-            var imageSize = new kakao.maps.Size(24,35);
-
-            var markerImage = new kakao.maps.MarkerImage(imageSrc,imageSize);
-
-            var marker = new kakao.maps.Marker({
-                map : map,
-                position: positions[i].latlng,
-                title : positions[i].title,
-                image : markerImage
-            });
-            (function(marker, position) {
-                kakao.maps.event.addListener(marker, 'click', function() {
-                    if(overlay){
-                        closeOverlay()
-                    }
-                    var content = '<div class="wrap">' +
-                        '    <div class="info">' +
-                        '        <div class="title">' +
-                        '     <p class="text-sm text-muted mb-0">'+ position.title +'</p>'  +
-                        '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' +
-                        '        </div>' +
-                        '        <div class="body">' +
-                        '            <div class="img">' +
-                        '                <img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/thumnail.png" width="73" height="70">' +
-                        '           </div>' +
-                        '            <div class="desc">' +
-                        '                <div class="ellipsis" style="font-weight: bold;">축제 장소</div>' +
-                        '                <div class="ellipsis">제주특별자치도 제주시 첨단로 242</div>' +
-                        '                <div class="jibun ellipsis">(우) 63309 (지번) 영평동 2181</div>' +
-                        '                <div><a href="https://www.kakaocorp.com/main" target="_blank" class="link">홈페이지</a></div>' +
-                        '            </div>' +
-                        '        </div>' +
-                        '    </div>' +
-                        '</div>';
-                    overlay = new kakao.maps.CustomOverlay({
-                        content: content,
-                        map : map,
-                        position : marker.getPosition()
-                    });
-                    overlay.setMap(map);
-                });
-            })(marker, positions[i]);
-        }
-
-    */
-    /*
-
-    필요한 함수 영역
-
-    */
 
     function closeOverlay() {
         overlay.setMap(null);
@@ -577,12 +475,14 @@
             if (web == '정보 없음'){
                 web = '/';
             }
-
+            else if ((!web.includes("https://") || !web.includes("http://"))) {
+                web = "https://" + web;
+            }
 
             var listItem = '<div class="col-sm-6 mb-5 hover-animate" data-marker-id="' + item.id + '">' +
                 '<div class="card h-100 border-0 shadow">' +
                 '<div class="card-img-top overflow-hidden dark-overlay bg-cover" style="background-image: url(resources/img/index/photo/restaurant-1430931071372-38127bd472b8.jpg); min-height: 200px;">' +
-                '<a class="tile-link" href="/detail"></a>' +
+                '<a class="tile-link" href="/detail?event_id='+item.id+'"></a>' +
                 '<div class="card-img-overlay-bottom z-index-20">' +
                 '<h5 class="text-white text-shadow">' + item.name + '</h5>' +
                 '<h7 class="text-white text-shadow">' + item.place + '</h7>' + star +
@@ -885,7 +785,9 @@
 
 
                     $.each(data, function(index, area){
-                        $('#form_sgg').append('<option value="' + area.sigungu + '">' + area.sigungu + '</option>');
+                        if (area.sigungu != null){
+                            $('#form_sgg').append('<option value="' + area.sigungu + '">' + area.sigungu + '</option>');
+                        }
                     });
 
                 }

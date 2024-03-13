@@ -59,9 +59,9 @@
                     AND INSTR(행사명, #{data.search}) > 0
                 </if>
                 <if test="data.sido != 'all'">
-                    AND INSTR(소재지도로명주소, #{data.sido}) > 0
+                    AND INSTR(소재지지번주소, #{data.sido}) > 0
                     <if test="data.sigungu != 'all'">
-                        AND INSTR(소재지도로명주소, #{data.sigungu}) > 0
+                        AND INSTR(소재지지번주소, #{data.sigungu}) > 0
                     </if>
                 </if>
             </where>

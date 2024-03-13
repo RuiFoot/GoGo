@@ -2,10 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-
-
-
-<mapper namespace="com.example.gogo.index.dao.HomeDAO">
+<mapper namespace="com.example.gogo.detail.dao.DetailDAO">
     <resultMap type="com.example.gogo.index.vo.FestivalListVO" id="festivalResultMap">
         <id property="id" column="EVENT_NO"/>
         <result property="name" column="행사명"/>
@@ -38,58 +35,9 @@
     </resultMap>
 
 
-
-    <select id="getAllArea" parameterType="String" resultType="com.example.gogo.index.vo.AreaVO">
-        SELECT sido,sigungu
-        FROM SIDO
-        WHERE sido = #{sido}
+    <select id="getDetail" parameterType="String" resultMap="festivalResultMap">
+        SELECT *
+        FROM DATA
+        WHERE EVENT_NO = #{event_no}
     </select>
-
-
-    <select id="getList" parameterType="Paging" resultMap="festivalResultMap">
-        <![CDATA[
-    SELECT *
-    FROM (
-        SELECT A.*, ROWNUM rn
-        FROM (
-            SELECT *
-            FROM DATA ]]>
-            <where>
-                <if test="data.search != null and data.search != ''">
-                    AND INSTR(행사명, #{data.search}) > 0
-                </if>
-                <if test="data.sido != 'all'">
-                    AND INSTR(소재지지번주소, #{data.sido}) > 0
-                    <if test="data.sigungu != 'all'">
-                        AND INSTR(소재지지번주소, #{data.sigungu}) > 0
-                    </if>
-                </if>
-            </where>
-        <![CDATA[
-            ORDER BY 행사종료일자 DESC
-        ) A
-        WHERE ROWNUM <= #{pageable.offset}+#{pageable.size}
-    )
-    WHERE rn > #{pageable.offset}
-    ]]>
-    </select>
-
-    <select id="getListCount" parameterType="formDataVo" resultType="int">
-        SELECT COUNT(*) AS CNT
-        FROM data
-        <where>
-            <if test="formData.search != null and formData.search != ''">
-                And INSTR(행사명, #{formData.search}) > 0
-            </if>
-            <if test="formData.sido != 'all'">
-                AND INSTR(소재지도로명주소, #{formData.sido}) > 0
-                <if test="formData.sigungu != 'all'">
-                    AND INSTR(소재지도로명주소, #{formData.sigungu}) > 0
-                </if>
-            </if>
-        </where>
-    </select>
-
 </mapper>
-
-
