@@ -32,8 +32,9 @@ public class DetailServiceImpl implements DetailService{
             String webAddressWithHttps = "https://" + festivalList.getWebAddress();
             festivalList.setWebAddress(webAddressWithHttps);
         }
-
-
+        if (festivalList.getWebAddress().contains("정보 없음")){
+            festivalList.setWebAddress("#");
+        }
 
         return festivalList;
     }

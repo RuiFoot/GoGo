@@ -4,22 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa1c2e0e-4c97-49db-bb0c-54cd0931a335" name="변경" comment="240312&#10;인덱스 페이지 검색 기능 완성&#10;페이징 기능 완성">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/detail/dao/DetailDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/detail/service/DetailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/detail/service/DetailServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/DetailMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/orai18n.xml" beforeDir="false" />
+    <list default="true" id="aa1c2e0e-4c97-49db-bb0c-54cd0931a335" name="변경" comment="240313&#10;인덱스 페이지 오류 수정&#10;디테일 페이지 값 세팅">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/detail/controller/DetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/detail/controller/DetailController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/controller/HomeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/indexMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/indexMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/detail/service/DetailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/detail/service/DetailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/header_main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/header_main.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/detail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mypage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mypage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gogo/detail/controller/DetailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gogo/detail/controller/DetailController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mappers/indexMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/indexMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +22,7 @@
         <option value="Interface" />
         <option value="Class" />
         <option value="spring-beans.schema" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -81,6 +72,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -98,10 +90,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "라이브러리",
+    "project.structure.last.edited": "프로젝트",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.35287356",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -254,7 +246,10 @@
       <workItem from="1710233874401" duration="12000" />
       <workItem from="1710234106668" duration="328000" />
       <workItem from="1710249629682" duration="1000" />
-      <workItem from="1710289049432" duration="11704000" />
+      <workItem from="1710289049432" duration="12439000" />
+      <workItem from="1710321101893" duration="2000" />
+      <workItem from="1710376925457" duration="1446000" />
+      <workItem from="1710392747542" duration="9101000" />
     </task>
     <task id="LOCAL-00001" summary="기역기역 스프링부트 프로젝트 세팅">
       <option name="closed" value="true" />
@@ -328,7 +323,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710233695930</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="240313&#10;인덱스 페이지 오류 수정&#10;디테일 페이지 값 세팅">
+      <option name="closed" value="true" />
+      <created>1710317928368</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1710317928368</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,6 +377,7 @@
     <MESSAGE value="240311&#10;Login, 회원가입 기본 기능 추가 (차세종)&#10;인덱스 페이지 검색 기능 추가 ( search까지 확인, 이후 페이징 기능 추가해서 view에 뿌릴 예정)" />
     <MESSAGE value="240312&#10;인덱스 페이지 검색 기능 : 페이징 후 리스트 목록 띄우기까지 완성.&#10;페이징 리스트는 아직 없음.&#10;mypage.jsp 오류 수정" />
     <MESSAGE value="240312&#10;인덱스 페이지 검색 기능 완성&#10;페이징 기능 완성" />
-    <option name="LAST_COMMIT_MESSAGE" value="240312&#10;인덱스 페이지 검색 기능 완성&#10;페이징 기능 완성" />
+    <MESSAGE value="240313&#10;인덱스 페이지 오류 수정&#10;디테일 페이지 값 세팅" />
+    <option name="LAST_COMMIT_MESSAGE" value="240313&#10;인덱스 페이지 오류 수정&#10;디테일 페이지 값 세팅" />
   </component>
 </project>
