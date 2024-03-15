@@ -9,5 +9,5 @@ import java.util.List;
 
 @Mapper
 public interface LoginDAO {
-    List<LoginVO> getAllMember(@Param("member_email") String member_email);
+    List<LoginVO> findByEmailAndPassword(@Param("member_email") String member_email , @Param("member_pw") String member_pw);
 }

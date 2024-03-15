@@ -8,17 +8,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class LoginVO {
-	private String member_no;
+	private int member_no;
 	private String member_pw;
 	private String member_name;
 	private String member_email;
 	private String member_nickname;
 	private String member_gender;
 	private String member_birth;
-	public String getMember_no() {
+	public int getMember_no() {
 		return member_no;
 	}
-	public void setMember_no(String member_no) {
+	public void setMember_no(int member_no) {
 		this.member_no = member_no;
 	}
 	public String getMember_pw() {

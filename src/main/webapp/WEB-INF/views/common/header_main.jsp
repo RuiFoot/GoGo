@@ -21,7 +21,9 @@
     <!-- Magnigic Popup-->
     <link rel="stylesheet" href="resources/vendor/magnific-popup/magnific-popup.css">
     <!-- Leaflet Maps-->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+          integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+          crossorigin="">
     <!-- theme stylesheet-->
     <link rel="stylesheet" href="resources/css/style.default.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
@@ -32,9 +34,11 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
     <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- 카카오맵 -->
-    <script type="text/javascript" src = "//dapi.kakao.com/v2/maps/sdk.js?appkey=ec49957b350f1235c905f13271cbcbb8"></script>
+    <script type="text/javascript"
+            src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ec49957b350f1235c905f13271cbcbb8"></script>
 
 </head>
 
@@ -44,25 +48,56 @@
     <!-- Navbar-->
     <nav class="navbar navbar-expand-lg fixed-top shadow navbar-light bg-white">
         <div class="container-fluid">
-            <div class="d-flex align-items-center"><a class="navbar-brand py-1" href="/"><img src="resources/img/logo.png" alt="Directory logo" width="80" height="80"></a>
+            <div class="d-flex align-items-center"><a class="navbar-brand py-1" href="/"><img
+                    src="resources/img/logo.png" alt="Directory logo" width="80" height="80"></a>
                 <form class="form-inline d-none d-sm-flex" action="/getList" id="search" method="GET">
                     <div class="input-label-absolute input-label-absolute-left input-expand ms-lg-2 ms-xl-3">
-                        <input class="form-control form-control-sm border-0 shadow-0 bg-gray-200" id="search_search" placeholder="Search" aria-label="Search" type="search">
+                        <input class="form-control form-control-sm border-0 shadow-0 bg-gray-200" id="search_search"
+                               placeholder="Search" aria-label="Search" type="search">
                     </div>
                 </form>
             </div>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                    aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
             <!-- Navbar Collapse -->
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <form class="form-inline mt-4 mb-2 d-sm-none" action="/getList" id="searchcollapsed", method="GET">
+                <form class="form-inline mt-4 mb-2 d-sm-none" action="/getList" id="searchcollapsed" , method="GET">
                     <div class="input-label-absolute input-label-absolute-left w-100">
-                        <label class="label-absolute" for="searchcollapsed_search"><i class="fa fa-search"></i><span class="sr-only">What are you looking for?</span></label>
-                        <input class="form-control form-control-sm border-0 shadow-0 bg-gray-200" id="searchcollapsed_search" placeholder="Search" aria-label="Search" type="search">
+                        <label class="label-absolute" for="searchcollapsed_search"><i class="fa fa-search"></i><span
+                                class="sr-only">What are you looking for?</span></label>
+                        <input class="form-control form-control-sm border-0 shadow-0 bg-gray-200"
+                               id="searchcollapsed_search" placeholder="Search" aria-label="Search" type="search">
                     </div>
                 </form>
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/login">Sign in</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/signup">Sign up</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <%-- 세션 확인 후 로그인 상태에 따라 다른 버튼 표시 --%>
+                    <%
+                        HttpSession ses = request.getSession();
+                        Integer member_no = (Integer) session.getAttribute("member_no");
+                        if (member_no != null) {
+                    %>
+                    <li class="nav-item">
+                        <form id="myPageForm" action="/mypage" method="post">
+                            <a class="nav-link" href="#" onclick="document.getElementById('myPageForm').submit(); return false;">My Page</a>
+                        </form>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                    <%-- 로그인 후에는 세션에 사용자 정보가 있으므로 마이페이지로 이동하는 버튼과 로그아웃 버튼을 표시합니다. --%>
+                    <% } else { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Sign in</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/signup">Sign up</a>
+                    </li>
+                    <%-- 로그인 상태가 아니면 로그인 및 회원가입 버튼을 표시합니다. --%>
+                    <% } %>
                 </ul>
                 <!--
                 <div class="dropdown nav d-none d-sm-block order-lg-3"><a class="nav-link d-flex align-items-center p-0" href="#" data-bs-toggle="dropdown" aria-expanded="false"><img class="border rounded-circle" src="resources/assets/mypage/img/avatar/01.jpg" width="48" alt="Isabella Bocouse">

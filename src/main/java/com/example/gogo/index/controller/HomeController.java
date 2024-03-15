@@ -11,19 +11,21 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @Controller
 public class HomeController {
 
     private final HomeServiceImpl homeServiceImpl;
+
     @Autowired
     public HomeController(HomeServiceImpl homeServiceImpl) {
         this.homeServiceImpl = homeServiceImpl;
     }
 
-    @RequestMapping (value = "/")
-    public String doHome(){
+    @RequestMapping(value = "/")
+    public String doHome() {
         System.out.println("실행 성공");
 
         return "index";
@@ -38,7 +40,7 @@ public class HomeController {
 
     @GetMapping(value = "/getList", produces = "application/json")
     @ResponseBody
-    public ResponseEntity<?> getList(@ModelAttribute FormDataVO formDataVo, @PageableDefault(size = 10)Pageable pageable) {
+    public ResponseEntity<?> getList(@ModelAttribute FormDataVO formDataVo, @PageableDefault(size = 10) Pageable pageable) {
         // 받은 데이터를 처리하는 로직을 작성합니다.
         // 받은 데이터를 토대로 서비스 계층에서 비즈니스 로직을 수행하고,
         // 결과를 JSON 또는 다른 형식으로 반환할 수 있습니다.

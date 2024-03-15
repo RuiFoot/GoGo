@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.gogo.mypage.dao.MyPageDAO">
+    <select id="GetMemberInfo" resultType="com.example.gogo.mypage.vo.MyPageVO">
+        SELECT *
+        FROM MEMBER
+        WHERE "member_no" = #{member_no}
+    </select>
+    <select id="GetReViewInfo" resultType="com.example.gogo.mypage.vo.ReViewVO">
+        SELECT R.* , D.행사명
+        FROM review R
+        LEFT JOIN data D on R."event_no" = D."event_no"
+        WHERE "member_no" = #{member_no}
+    </select>
+    <update id="updateUserInfo" parameterType="com.example.gogo.mypage.vo.MyPageVO">
+        UPDATE member
+        SET "member_name" = #{member_name}, "member_birth" = #{member_birth}, "member_gender" = #{member_gender}
+        WHERE "member_no" = #{member_no}
+    </update>
+
+</mapper>

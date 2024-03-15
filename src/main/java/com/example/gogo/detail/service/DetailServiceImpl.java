@@ -5,12 +5,13 @@ import com.example.gogo.index.vo.FestivalListVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.text.SimpleDateFormat;
 import java.util.List;
+
 @Service
-public class DetailServiceImpl implements DetailService{
+public class DetailServiceImpl implements DetailService {
 
     private final DetailDAO detailDAO;
+
     @Autowired
     public DetailServiceImpl(DetailDAO detailDAO) {
         this.detailDAO = detailDAO;
@@ -32,10 +33,36 @@ public class DetailServiceImpl implements DetailService{
             String webAddressWithHttps = "https://" + festivalList.getWebAddress();
             festivalList.setWebAddress(webAddressWithHttps);
         }
-        if (festivalList.getWebAddress().contains("정보 없음")){
+        if (festivalList.getWebAddress().contains("정보 없음")) {
             festivalList.setWebAddress("#");
         }
 
         return festivalList;
+    }
+
+    @Override
+    public List<FestivalListVO> getRecommend(FestivalListVO festivalList) {
+
+        String number = festivalList.getNumberAddress();
+        String road = festivalList.getRoadAddress();
+        System.out.println(number);
+        System.out.println(road);
+
+        String target = festivalList.getNumberAddress();
+
+        if (!road.contains("정보 없음")) {
+            target = road;
+        } else {
+            if (!number.contains("정보 없음")) {
+                target = number;
+            }
+        }
+        System.out.println(target);
+
+        String[] words = target.split(" ");
+        String firstWord = words[0];
+        System.out.println(firstWord);
+
+        return detailDAO.getRecommend(firstWord);
     }
 }

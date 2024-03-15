@@ -10,7 +10,6 @@ import java.util.List;
 import java.util.Map;
 
 public interface HomeService {
-    public List<AreaVO> getAllArea(String sido);
-
-    public Page<FestivalListVO> getList(FormDataVO formDataVo, Pageable pageable);
+    List<AreaVO> getAllArea(String sido);
+    Page<FestivalListVO> getList(FormDataVO formDataVo, Pageable pageable);
 }

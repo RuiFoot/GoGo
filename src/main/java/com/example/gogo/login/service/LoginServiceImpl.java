@@ -19,8 +19,8 @@ public class LoginServiceImpl implements LoginService{
     }
 
     @Override
-    public List<LoginVO> getAllMember(String member_email){
-        List<LoginVO> areaList = loginDAO.getAllMember(member_email);
+    public List<LoginVO> login(String member_email , String member_pw){
+        List<LoginVO> areaList = loginDAO.findByEmailAndPassword(member_email , member_pw);
         return areaList;
     }
 }

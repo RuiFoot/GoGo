@@ -9,4 +9,6 @@ import java.util.List;
 @Mapper
 public interface DetailDAO {
     FestivalListVO getDetail(@Param("event_no") String event_no);
+    List<FestivalListVO> getRecommend(@Param("sido") String sido);
+
 }

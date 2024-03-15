@@ -13,9 +13,7 @@ import java.util.List;
 @Mapper
 public interface HomeDAO {
     List<AreaVO> getAllArea(@Param("sido") String sido);
-
     List<FestivalListVO> getList(Paging<?> paging);
-
     int getListCount(@Param("formData") FormDataVO formDataVO);
 
 }

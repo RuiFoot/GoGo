@@ -1,181 +1,133 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <!-- Primary Meta Tags -->
-    <title>기역기역 - 로그인</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="title" content="기역기역 - 로그인">
-    <meta name="author" content="Themesberg">
-    <meta name="description" content="Premium Directory Listing Bootstrap 4 Template featuring 37 hand-crafted pages, a dashboard an Mapbox integration. Spaces also comes with a complete UI Kit featuring over 700 components by Themesberg.">
-    <meta name="keywords" content="bootstrap, bootstrap 4 template, directory listing bootstrap, bootstrap 4 listing, bootstrap listing, bootstrap 4 directory listing template, vector map, leaflet js template, mapbox theme, mapbox template, dashboard, themesberg, user dashboard bootstrap, dashboard bootstrap, ui kit, bootstrap ui kit, premium bootstrap theme" />
-    <link rel="canonical" href="https://themesberg.s3.us-east-2.amazonaws.com/public/products/spaces/thumbnail.jpg">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://demo.themesberg.com/pixel-pro">
-    <meta property="og:title" content="기역기역 - 로그인">
-    <meta property="og:description" content="Premium Directory Listing Bootstrap 4 Template featuring 37 hand-crafted pages, a dashboard an Mapbox integration. Spaces also comes with a complete UI Kit featuring over 700 components by Themesberg.">
-    <meta property="og:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/spaces/thumbnail.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://demo.themesberg.com/pixel-pro">
-    <meta property="twitter:title" content="기역기역 - 로그인">
-    <meta property="twitter:description" content="Premium Directory Listing Bootstrap 4 Template featuring 37 hand-crafted pages, a dashboard an Mapbox integration. Spaces also comes with a complete UI Kit featuring over 700 components by Themesberg.">
-    <meta property="twitter:image" content="https://themesberg.s3.us-east-2.amazonaws.com/public/products/spaces/thumbnail.jpg">
-
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="120x120" href="resources/img/logo.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="resources/img/logo.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="resources/img/logo.png">
-    <link rel="manifest" href="resources/img/logo.png">
-    <link rel="mask-icon" href="resources/img/logo.png" color="#ffffff">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#ffffff">
-
-    <!-- Fontawesome -->
-    <link type="text/css" href="resources/vendor/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
-
-    <!-- Leaflet JS -->
-    <link type="text/css" href="resources/vendor/leaflet/dist/leaflet.css" rel="stylesheet">
-
-    <!-- Fancybox -->
-    <link rel="stylesheet" href="resources/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.css">
-
-    <!-- VectorMap -->
-    <link rel="stylesheet" href="resources/vendor/jqvmap/dist/jqvmap.min.css">
-
-    <!-- Main CSS -->
-    <link type="text/css" href="resources/css/spaces.css" rel="stylesheet">
-
-    <!-- NOTICE: You can use the _analytics.html partial to include production code specific code & trackers -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>기역기역</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Price Slider Stylesheets -->
+    <link rel="stylesheet" href="resources/vendor/nouislider/nouislider.css">
+    <!-- Google fonts - Playfair Display-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700">
+    <!-- Google fonts - Poppins-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,700">
+    <!-- swiper-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css">
+    <!-- Magnigic Popup-->
+    <link rel="stylesheet" href="resources/vendor/magnific-popup/magnific-popup.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="resources/css/style.default.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="resources/css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="resources/img/favicon.png">
+    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
-
-
 <body>
-<main>
-    <!-- Section -->
-    <section class="min-vh-100 d-flex align-items-center section-image overlay-soft-dark py-5 py-lg-0" data-background="resources/img/index/photo/photo-1471189641895-16c58a695bcb.jpg">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12">
-                    <div class="text-center text-md-center mb-5 mt-md-0 text-white">
-                        <h1 class="mb-0 h3">Welcome to Local Festival</h1>
-                    </div>
+<div class="container-fluid px-3">
+    <div class="row min-vh-100">
+        <div class="col-md-8 col-lg-6 col-xl-5 d-flex align-items-center">
+            <div class="w-100 py-5 px-md-5 px-xxl-6 position-relative">
+                <div class="mb-5"><a href="/">
+                    <img class="img-fluid mb-3" src="resources/img/logo.png" alt="..." style="max-width: 4rem;">
+                </a>
+                    <h2>기역기역에 어서오세요!</h2>
                 </div>
-                <div class="col-12 d-flex align-items-center justify-content-center">
-                    <div class="signin-inner mt-3 mt-lg-0 bg-white shadow-soft border rounded border-light p-4 p-lg-5 w-100 fmxw-500">
-                        <form action="/login" method="POST">
-                            <!-- Form -->
-                            <div class="form-group">
-                                <label for="email">이메일</label>
-                                <div class="input-group mb-4">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><span class="fas fa-envelope"></span></span>
-                                    </div>
-                                    <input class="form-control" id="email" name="member_email" placeholder="기역기역@example.com" type="text" aria-label="email address">
-                                </div>
+                <form class="form-validate" action="/login" method="POST">
+                    <div class="mb-4">
+                        <label class="form-label" for="loginUsername"> 이메일 주소</label>
+                        <input class="form-control" name="member_email" id="loginUsername" type="email"
+                               placeholder="기역기역@address.com" autocomplete="off" required
+                               data-msg="Please enter your email">
+                    </div>
+                    <div class="mb-4">
+                        <div class="row">
+                            <div class="col">
+                                <label class="form-label" for="loginPassword"> 비밀번호</label>
                             </div>
-                            <!-- End of Form -->
-                            <div class="form-group">
-                                <!-- Form -->
-                                <div class="form-group">
-                                    <label for="password">비밀번호</label>
-                                    <div class="input-group mb-4">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><span class="fas fa-unlock-alt"></span></span>
-                                        </div>
-                                        <input class="form-control" id="password" name ="member_pw"placeholder="Password" type="password" aria-label="Password" required>
-                                    </div>
-                                </div>
-                                <!-- End of Form -->
-                                <div class="d-flex justify-content-between align-items-center mb-4">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="remember">
-                                        <label class="form-check-label" for="remember">
-                                            저장
-                                        </label>
-                                    </div>
-                                    <div><a href="./forgot-password-email.html" class="small text-right">비밀번호 찾기</a></div>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-block btn-primary">로그인</button>
-                        </form>
-                        <!-- <div class="mt-3 mb-4 text-center">
-                            <span class="font-weight-normal">or login with</span>
-                        </div> -->
-                        <!-- <div class="btn-wrapper my-4 text-center">
-                            <button class="btn btn-icon-only btn-pill btn-outline-light text-facebook mr-2" type="button" aria-label="facebook button" title="facebook button">
-                                <span aria-hidden="true" class="fab fa-facebook-f"></span>
-                            </button>
-                            <button class="btn btn-icon-only btn-pill btn-outline-light text-twitter mr-2" type="button" aria-label="twitter button" title="twitter button">
-                                <span aria-hidden="true" class="fab fa-twitter"></span>
-                            </button>
-                            <button class="btn btn-icon-only btn-pill btn-outline-light text-facebook" type="button" aria-label="github button" title="github button">
-                                <span aria-hidden="true" class="fab fa-github"></span>
-                            </button>
-                        </div> -->
-                        <div class="d-block d-sm-flex justify-content-center align-items-center mt-4">
-                            <!-- <span class="font-weight-normal">
-                                Not registered? -->
-                            <a href="./sign-up.html" class="font-weight-bold">회원가입</a>
-                            </span>
                         </div>
+                        <input class="form-control" name="member_pw" id="loginPassword" placeholder="Password"
+                               type="password" required data-msg="Please enter your password">
                     </div>
-                </div>
+                    <div class="mb-4">
+                    </div>
+                    <!-- Submit-->
+                    <div class="d-grid">
+                        <button class="btn btn-lg btn-primary">Sign in</button>
+                    </div>
+                    <hr class="my-4">
+                    <p class="text-center"><small class="text-muted text-center">Don't have an account yet? <a
+                            href="/signup">Sign Up </a></small></p>
+                </form>
+                <a class="close-absolute me-md-5 me-xl-6 pt-5" href="index.html">
+                    <svg class="svg-icon w-3rem h-3rem">
+                        <use xlink:href="#close-1"></use>
+                    </svg>
+                </a>
             </div>
         </div>
-    </section>
-</main>
+        <div class="col-md-4 col-lg-6 col-xl-7 d-none d-md-block">
+            <!-- Image-->
+            <div class="bg-cover h-100 me-n3"
+                 style="background-image: url(resources/img/index/photo/photo-1497436072909-60f360e1d4b1.jpg);"></div>
+        </div>
+    </div>
+</div>
 
-<!-- Core -->
+<!-- JavaScript files-->
+<script>
+    // ------------------------------------------------------- //
+    //   Inject SVG Sprite -
+    //   see more here
+    //   https://css-tricks.com/ajaxing-svg-sprite/
+    // ------------------------------------------------------ //
+    function injectSvgSprite(path) {
+
+        var ajax = new XMLHttpRequest();
+        ajax.open("GET", path, true);
+        ajax.send();
+        ajax.onload = function (e) {
+            var div = document.createElement("div");
+            div.className = 'd-none';
+            div.innerHTML = ajax.responseText;
+            document.body.insertBefore(div, document.body.childNodes[0]);
+        }
+    }
+
+    // to avoid CORS issues when viewing using file:// protocol, using the demo URL for the SVG sprite
+    // use your own URL in production, please :)
+    // https://demo.bootstrapious.com/directory/1-0/icons/orion-svg-sprite.svg
+    //- injectSvgSprite('${path}icons/orion-svg-sprite.svg');
+    injectSvgSprite('https://demo.bootstrapious.com/directory/1-4/icons/orion-svg-sprite.svg');
+
+</script>
+<!-- jQuery-->
 <script src="resources/vendor/jquery/dist/jquery.min.js"></script>
-<script src="resources/vendor/popper.js/dist/umd/popper.min.js"></script>
-<script src="resources/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="resources/vendor/headroom.js/dist/headroom.min.js"></script>
-<script src="resources/vendor/onscreen/dist/on-screen.umd.min.js"></script>
-
-<!-- NoUISlider -->
-<script src="resources/vendor/nouislider/distribute/nouislider.min.js"></script>
-
-<!-- Bootstrap Datepicker -->
-<script src="resources/vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-
-<!-- jQuery Waypoints -->
-<script src="resources/vendor/waypoints/lib/jquery.waypoints.min.js"></script>
-
-<!-- Owl acrousel -->
-<script src="resources/vendor/owl.carousel/dist/owl.carousel.min.js"></script>
-
-<!-- Smooth scroll -->
+<!-- Bootstrap JS bundle - Bootstrap + PopperJS-->
+<script src="resources/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Magnific Popup - Lightbox for the gallery-->
+<script src="resources/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+<!-- Smooth scroll-->
 <script src="resources/vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
 
-<!-- Fancybox -->
-<script src="resources/vendor/@fancyapps/fancybox/dist/jquery.fancybox.min.js"></script>
-
-<!-- Sticky sidebar -->
-<script src="resources/vendor/sticky-sidebar/dist/sticky-sidebar.min.js"></script>
-
-<!-- Mapbox & Leaflet.js -->
-<script src="resources/vendor/leaflet/dist/leaflet.js"></script>
-
-<!-- Chartist -->
-<script src="resources/vendor/chartist/dist/chartist.min.js"></script>
-
-<script src="resources/vendor/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
-
-<!-- Vector Maps -->
-<script src="resources/vendor/jqvmap/dist/jquery.vmap.min.js"></script>
-<script src="resources/vendor/jqvmap/dist/maps/jquery.vmap.usa.js"></script>
-
-<!-- Sliderform -->
-<script src="resources/assets/js/jquery.slideform.js"></script>
-
-<!-- Spaces custom Javascript -->
-<script src="resources/assets/js/spaces.js"></script>
+<script src="resources/vendor/object-fit-images/ofi.min.js"></script>
+<!-- Swiper Carousel -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js"></script>
+<script>var basePath = ''</script>
+<!-- Main Theme JS file -->
+<script src="resources/js/theme.js"></script>
+<% if (request.getAttribute("error") != null) { %>
+<script>
+    alert("<%= request.getAttribute("error") %>");
+</script>
+<% } %>
 </body>
-
 </html>

@@ -4,7 +4,6 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 
-
 <mapper namespace="com.example.gogo.index.dao.HomeDAO">
     <resultMap type="com.example.gogo.index.vo.FestivalListVO" id="festivalResultMap">
         <id property="id" column="EVENT_NO"/>
@@ -38,7 +37,6 @@
     </resultMap>
 
 
-
     <select id="getAllArea" parameterType="String" resultType="com.example.gogo.index.vo.AreaVO">
         SELECT sido,sigungu
         FROM SIDO
@@ -54,17 +52,31 @@
         FROM (
             SELECT *
             FROM DATA ]]>
-            <where>
-                <if test="data.search != null and data.search != ''">
-                    AND INSTR(행사명, #{data.search}) > 0
+        <where>
+            <if test="data.search != null and data.search != ''">
+                AND INSTR(행사명, #{data.search}) > 0
+            </if>
+            <choose>
+                <when test="data.checkboxes != null and data.checkboxes != ''">
+                    <foreach item="checkbox" index="index" collection="data.checkboxes" open="" separator="" close="">
+                        <choose>
+                            <when test="checkbox == '유료' or checkbox == '무료'">
+                                AND INSTR(요금정보, #{checkbox}) > 0
+                            </when>
+                            <when test="checkbox != '유료' and checkbox != '무료'">
+                                OR INSTR(행사내용, #{checkbox}) > 0
+                            </when>
+                        </choose>
+                    </foreach>
+                </when>
+            </choose>
+            <if test="data.sido != 'all'">
+                AND INSTR(소재지지번주소, #{data.sido}) > 0
+                <if test="data.sigungu != 'all'">
+                    AND INSTR(소재지지번주소, #{data.sigungu}) > 0
                 </if>
-                <if test="data.sido != 'all'">
-                    AND INSTR(소재지지번주소, #{data.sido}) > 0
-                    <if test="data.sigungu != 'all'">
-                        AND INSTR(소재지지번주소, #{data.sigungu}) > 0
-                    </if>
-                </if>
-            </where>
+            </if>
+        </where>
         <![CDATA[
             ORDER BY 행사종료일자 DESC
         ) A
@@ -81,6 +93,21 @@
             <if test="formData.search != null and formData.search != ''">
                 And INSTR(행사명, #{formData.search}) > 0
             </if>
+            <choose>
+                <when test="formData.checkboxes != null and formData.checkboxes != ''">
+                    <foreach item="checkbox" index="index" collection="formData.checkboxes" open="" separator=""
+                             close="">
+                        <choose>
+                            <when test="checkbox == '유료' or checkbox == '무료'">
+                                AND INSTR(요금정보, #{checkbox}) > 0
+                            </when>
+                            <when test="checkbox != '유료' and checkbox != '무료'">
+                                OR INSTR(행사내용, #{checkbox}) > 0
+                            </when>
+                        </choose>
+                    </foreach>
+                </when>
+            </choose>
             <if test="formData.sido != 'all'">
                 AND INSTR(소재지도로명주소, #{formData.sido}) > 0
                 <if test="formData.sigungu != 'all'">

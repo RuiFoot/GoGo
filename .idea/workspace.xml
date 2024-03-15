@@ -4,12 +4,60 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa1c2e0e-4c97-49db-bb0c-54cd0931a335" name="변경" comment="240313&#10;인덱스 페이지 오류 수정&#10;디테일 페이지 값 세팅">
+    <list default="true" id="aa1c2e0e-4c97-49db-bb0c-54cd0931a335" name="변경" comment="240314&#10;헤더 이미지 수정&#10;디테일 페이지 새로 세팅 값 세팅&#10;푸터 새로 생성">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/mypage/dao/MyPageDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/mypage/service/MyPageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/mypage/service/MyPageServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/mypage/vo/MyPageVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/mypage/vo/ReViewVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mappers/MyPageMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d0b6a2f0-c2a1-4b02-bab4-da2dcccc9883.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d0b6a2f0-c2a1-4b02-bab4-da2dcccc9883.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/detail/controller/DetailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/detail/controller/DetailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/detail/dao/DetailDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/detail/dao/DetailDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/detail/service/DetailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/detail/service/DetailService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/detail/service/DetailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/detail/service/DetailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/dao/HomeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/dao/HomeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/service/HomeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/service/HomeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/service/HomeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/service/HomeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/vo/Paging.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/index/vo/Paging.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/login/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/login/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/login/dao/LoginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/login/dao/LoginDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/login/service/LoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/login/service/LoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/login/service/LoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/login/service/LoginServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/login/vo/LoginVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/login/vo/LoginVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/mypage/controller/MyPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/mypage/controller/MyPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/gogo/signup/vo/SignUpVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/gogo/signup/vo/SignUpVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/DetailMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/DetailMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/SignUpMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/SignUpMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/indexMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/indexMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/memberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mappers/memberMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/footer_main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/footer_main.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/header_main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common/header_main.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/detail.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mypage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/mypage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/signup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/signup.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gogo/detail/controller/DetailController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gogo/detail/controller/DetailController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gogo/detail/dao/DetailDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gogo/detail/dao/DetailDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gogo/detail/service/DetailService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gogo/detail/service/DetailService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gogo/detail/service/DetailServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gogo/detail/service/DetailServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gogo/index/controller/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gogo/index/controller/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gogo/index/service/HomeServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gogo/index/service/HomeServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gogo/login/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gogo/login/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gogo/login/dao/LoginDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gogo/login/dao/LoginDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gogo/login/service/LoginService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gogo/login/service/LoginService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gogo/login/service/LoginServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gogo/login/service/LoginServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gogo/login/vo/LoginVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gogo/login/vo/LoginVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gogo/mypage/controller/MyPageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gogo/mypage/controller/MyPageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/gogo/signup/vo/SignUpVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/gogo/signup/vo/SignUpVO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mappers/DetailMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/DetailMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mappers/SignUpMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/SignUpMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mappers/indexMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/indexMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mappers/memberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mappers/memberMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +71,7 @@
         <option value="Class" />
         <option value="spring-beans.schema" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -36,6 +85,9 @@
     &quot;assignee&quot;: &quot;RuiFoot&quot;
   }
 }</component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -83,8 +135,9 @@
     "Spring Boot.GogoApplication.executor": "Run",
     "Tomcat 서버.Tomcat 9.0.75.executor": "Run",
     "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/bootcamp/semiproject/workspace/orai18n.jar",
+    "last_opened_file_path": "D:/bootcamp/semiproject/workspace/gogo/src/main/java/com/example/gogo/login/vo",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -104,11 +157,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\bootcamp\semiproject\workspace\gogo\src\main\java\com\example\gogo\signup\vo" />
-      <recent name="D:\bootcamp\semiproject\workspace\gogo\src\main\java\com\example\gogo\signup\service" />
-      <recent name="D:\bootcamp\semiproject\workspace\gogo\src\main\java\com\example\gogo\signup\dao" />
-      <recent name="D:\bootcamp\semiproject\workspace\gogo\src\main\resources\mappers" />
       <recent name="D:\bootcamp\semiproject\workspace\gogo\src\main\java\com\example\gogo\login\vo" />
+      <recent name="D:\bootcamp\semiproject\workspace\gogo\src\main\java\com\example\gogo\login\service" />
+      <recent name="D:\bootcamp\semiproject\workspace\gogo\src\main\java\com\example\gogo\login\dao" />
+      <recent name="D:\bootcamp\semiproject\workspace\gogo\src\main\java\com\example\gogo\login\controller" />
+      <recent name="D:\bootcamp\semiproject\workspace\gogo\src\main\java\com\example\gogo\mypage\vo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\bootcamp\semiproject\workspace\gogo\src\main\resources\mappers" />
@@ -249,7 +302,11 @@
       <workItem from="1710289049432" duration="12439000" />
       <workItem from="1710321101893" duration="2000" />
       <workItem from="1710376925457" duration="1446000" />
-      <workItem from="1710392747542" duration="9101000" />
+      <workItem from="1710392747542" duration="11944000" />
+      <workItem from="1710404708551" duration="1220000" />
+      <workItem from="1710420809798" duration="25000" />
+      <workItem from="1710462842353" duration="1784000" />
+      <workItem from="1710464958299" duration="13926000" />
     </task>
     <task id="LOCAL-00001" summary="기역기역 스프링부트 프로젝트 세팅">
       <option name="closed" value="true" />
@@ -331,7 +388,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710317928368</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="240314&#10;헤더 이미지 수정&#10;디테일 페이지 새로 세팅 값 세팅&#10;푸터 새로 생성">
+      <option name="closed" value="true" />
+      <created>1710401986681</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1710401986681</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -378,6 +443,7 @@
     <MESSAGE value="240312&#10;인덱스 페이지 검색 기능 : 페이징 후 리스트 목록 띄우기까지 완성.&#10;페이징 리스트는 아직 없음.&#10;mypage.jsp 오류 수정" />
     <MESSAGE value="240312&#10;인덱스 페이지 검색 기능 완성&#10;페이징 기능 완성" />
     <MESSAGE value="240313&#10;인덱스 페이지 오류 수정&#10;디테일 페이지 값 세팅" />
-    <option name="LAST_COMMIT_MESSAGE" value="240313&#10;인덱스 페이지 오류 수정&#10;디테일 페이지 값 세팅" />
+    <MESSAGE value="240314&#10;헤더 이미지 수정&#10;디테일 페이지 새로 세팅 값 세팅&#10;푸터 새로 생성" />
+    <option name="LAST_COMMIT_MESSAGE" value="240314&#10;헤더 이미지 수정&#10;디테일 페이지 새로 세팅 값 세팅&#10;푸터 새로 생성" />
   </component>
 </project>

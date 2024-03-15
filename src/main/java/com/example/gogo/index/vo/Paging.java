@@ -15,5 +15,4 @@ import org.springframework.data.domain.Pageable;
 public class Paging<T> {
     private T data;
     private Pageable pageable;
-
 }

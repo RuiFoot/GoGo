@@ -19,15 +19,14 @@ import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
-public class HomeServiceImpl implements HomeService{
+public class HomeServiceImpl implements HomeService {
 
     private final HomeDAO homeDAO;
 
     @Override
-    public List<AreaVO> getAllArea(String sido){
+    public List<AreaVO> getAllArea(String sido) {
         System.out.println("getAllArea 서비스 실행");
-        List<AreaVO> areaList = homeDAO.getAllArea(sido);
-        return areaList;
+        return homeDAO.getAllArea(sido);
     }
 
     @Override
@@ -50,6 +49,6 @@ public class HomeServiceImpl implements HomeService{
 
         System.out.println(pageable.toString());
 
-        return new PageImpl<>(festivalList,pageable,total);
+        return new PageImpl<>(festivalList, pageable, total);
     }
 }

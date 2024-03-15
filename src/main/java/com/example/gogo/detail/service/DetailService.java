@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface DetailService {
     FestivalListVO getDetail(String event_no);
+    List<FestivalListVO> getRecommend(FestivalListVO festivalList);
+
 }

@@ -1,6 +1,6 @@
 package com.example.gogo.detail.controller;
 
-import com.example.gogo.detail.service.DetailService;
+
 import com.example.gogo.detail.service.DetailServiceImpl;
 import com.example.gogo.index.vo.FestivalListVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +11,12 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
+import java.util.Collections;
 
 @Controller
 public class DetailController {
     private final DetailServiceImpl detailServiceImpl;
+
     @Autowired
     public DetailController(DetailServiceImpl detailServiceImpl) {
         this.detailServiceImpl = detailServiceImpl;
@@ -22,22 +24,34 @@ public class DetailController {
 
 
     @GetMapping(value = "/detail")
-    public ModelAndView doDetail(@RequestParam("event_id") String eventId){
+    public ModelAndView doDetail(@RequestParam("event_id") String eventId) {
         System.out.println("상세페이지 실행");
-        System.out.println("행사 id = " + eventId );
+        System.out.println("행사 id = " + eventId);
 
         FestivalListVO festivalList = detailServiceImpl.getDetail(eventId);
 
-        System.out.println(festivalList.toString());
+
+        List<FestivalListVO> recommendList = detailServiceImpl.getRecommend(festivalList);
+
+        List<FestivalListVO> shuffledList = recommendList;
+        Collections.shuffle(shuffledList);
+        int numToExtract = 10;
+        List<FestivalListVO> randomExtractedList = shuffledList.subList(0, Math.min(numToExtract, shuffledList.size()));
+
+        System.out.println(festivalList);
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
 
         ModelAndView modelAndView = new ModelAndView("detail");
 
         modelAndView.addObject("startDay", dateFormat.format(festivalList.getStartDay()));
         modelAndView.addObject("endDay", dateFormat.format(festivalList.getEndDay()));
-        modelAndView.addObject("festivalList",festivalList);
+        modelAndView.addObject("festivalList", festivalList);
+        modelAndView.addObject("recommendList", randomExtractedList);
+
         return modelAndView;
+
     }
 
 }

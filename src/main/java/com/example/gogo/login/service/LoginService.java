@@ -5,5 +5,5 @@ import com.example.gogo.login.vo.LoginVO;
 import java.util.List;
 
 public interface LoginService {
-    public List<LoginVO> getAllMember(String member_email);
+    public List<LoginVO> login(String member_email,String member_pw);
 }
