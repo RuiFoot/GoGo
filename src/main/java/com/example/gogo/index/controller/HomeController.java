@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
@@ -24,11 +25,30 @@ public class HomeController {
         this.homeServiceImpl = homeServiceImpl;
     }
 
-    @RequestMapping(value = "/")
-    public String doHome() {
+    @GetMapping(value = "/")
+    public ModelAndView doHome(@ModelAttribute FormDataVO formDataVo, @PageableDefault(size = 16) Pageable pageable) {
         System.out.println("실행 성공");
 
-        return "index";
+        ModelAndView mav = new ModelAndView("index");
+        System.out.println(formDataVo);
+
+        if (formDataVo.getSearch() != null){
+            mav.addObject("formDataVo",formDataVo);
+        }
+
+        if (formDataVo.getSido() == null){
+            formDataVo.setSido("all");
+            formDataVo.setSigungu("all");
+        }
+        System.out.println(formDataVo);
+        System.out.println(pageable);
+        Page<?> paging = homeServiceImpl.getList(formDataVo, pageable);
+
+        System.out.println(paging);
+
+        mav.addObject("paging",paging);
+
+        return mav;
     }
 
     @GetMapping(value = "/getArea", produces = "application/json")
@@ -40,12 +60,15 @@ public class HomeController {
 
     @GetMapping(value = "/getList", produces = "application/json")
     @ResponseBody
-    public ResponseEntity<?> getList(@ModelAttribute FormDataVO formDataVo, @PageableDefault(size = 10) Pageable pageable) {
+    public ResponseEntity<?> getList(@ModelAttribute FormDataVO formDataVo, @PageableDefault(size = 16) Pageable pageable) {
         // 받은 데이터를 처리하는 로직을 작성합니다.
         // 받은 데이터를 토대로 서비스 계층에서 비즈니스 로직을 수행하고,
         // 결과를 JSON 또는 다른 형식으로 반환할 수 있습니다.
-
-        System.out.println(formDataVo.toString());
+        if (formDataVo.getSido() == null){
+            formDataVo.setSido("all");
+            formDataVo.setSigungu("all");
+        }
+        System.out.println(formDataVo);
         System.out.println(pageable);
         Page<?> paging = homeServiceImpl.getList(formDataVo, pageable);
         return ResponseEntity.ok(paging);

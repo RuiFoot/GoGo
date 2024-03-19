@@ -38,7 +38,7 @@ var markers = [];
 
 var overlay;
 
-var size = 10;
+var size = 16;
 
 function result(data) {
 

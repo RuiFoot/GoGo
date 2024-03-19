@@ -50,9 +50,9 @@
         <div class="container-fluid">
             <div class="d-flex align-items-center"><a class="navbar-brand py-1" href="/"><img
                     src="resources/img/logo.png" alt="Directory logo" width="80" height="80"></a>
-                <form class="form-inline d-none d-sm-flex" action="/getList" id="search" method="GET">
+                <form class="form-inline d-none d-sm-flex" action="/" id="search_header" method="GET">
                     <div class="input-label-absolute input-label-absolute-left input-expand ms-lg-2 ms-xl-3">
-                        <input class="form-control form-control-sm border-0 shadow-0 bg-gray-200" id="search_search"
+                        <input class="form-control form-control-sm border-0 shadow-0 bg-gray-200" id="search" name="search"
                                placeholder="Search" aria-label="Search" type="search">
                     </div>
                 </form>
@@ -62,14 +62,6 @@
                     aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
             <!-- Navbar Collapse -->
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <form class="form-inline mt-4 mb-2 d-sm-none" action="/getList" id="searchcollapsed" , method="GET">
-                    <div class="input-label-absolute input-label-absolute-left w-100">
-                        <label class="label-absolute" for="searchcollapsed_search"><i class="fa fa-search"></i><span
-                                class="sr-only">What are you looking for?</span></label>
-                        <input class="form-control form-control-sm border-0 shadow-0 bg-gray-200"
-                               id="searchcollapsed_search" placeholder="Search" aria-label="Search" type="search">
-                    </div>
-                </form>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>

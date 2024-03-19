@@ -16740,3 +16740,5 @@ STYLE SWITCHER FOR DEMO
 #style-switch h4, #style-switch .h4 {
   color: #495057;
 }
+
+.footer {   position: fixed;   bottom: 0;   width: 100%; }

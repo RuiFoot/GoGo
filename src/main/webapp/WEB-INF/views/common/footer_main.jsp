@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 <!-- Footer-->
-<footer class="position-relative z-index-10 d-print-none">
+<footer class="position-relative z-index-10 d-print-none ">
     <!-- Main block - menus, subscribe form-->
     <div class="py-6 bg-gray-200 text-muted">
         <div class="container">
@@ -53,6 +53,13 @@
     </div>
     <!-- Copyright section of the footer-->
     <div class="py-4 fw-light bg-gray-800 text-gray-300">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-sm mb-md-0">&copy; 2024, Your company.  All rights reserved.</p>
+                </div>
+            </div>
+        </div>
     </div>
 </footer>
 

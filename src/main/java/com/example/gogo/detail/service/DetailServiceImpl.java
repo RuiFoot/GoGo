@@ -36,7 +36,6 @@ public class DetailServiceImpl implements DetailService {
         if (festivalList.getWebAddress().contains("정보 없음")) {
             festivalList.setWebAddress("#");
         }
-
         return festivalList;
     }
 
