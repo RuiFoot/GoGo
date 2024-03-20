@@ -16742,3 +16742,56 @@ STYLE SWITCHER FOR DEMO
 }
 
 .footer {   position: fixed;   bottom: 0;   width: 100%; }
+
+.duplicate-check-btn {
+  position: absolute;
+  top: 73%;
+  right: 0;
+  transform: translateY(-50%);
+  margin-left: 0.5rem; /* Add some spacing between the input and button */
+}
+/* CSS styling for gender container */
+.gender-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* CSS styling for gender selection box */
+.gender-box {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the text horizontally */
+  cursor: pointer;
+  flex: 1; /* Fill available space evenly */
+  width: 150px; /* Adjust width as needed */
+  padding: 0.375rem 0.75rem; /* Adjust padding as needed */
+  border: 1px solid #ced4da; /* Add border for clarity */
+  border-radius: 0.4rem; /* Add border radius for rounded corners */
+  margin-right: 2px; /* Adjust margin between gender boxes */
+
+}
+
+/* CSS styling for male and female labels */
+.gender-box label {
+  margin-left: 2px; /* Adjust spacing between radio button and label */
+}
+
+/* CSS styling for active state */
+.gender-box.active {
+  background-color: #007bff; /* Change background color for active state */
+  color: #fff; /* Change text color for active state */
+}
+
+.gender-box input[type="radio"] {
+  display: none; /* Hide the radio button */
+}
+
+.col-lg-6 {
+  flex: 1; /* Allow both columns to grow and shrink to fill the available space */
+  overflow: hidden; /* Ensure content overflow is hidden */
+}
+.map-side-lg {
+  position: relative; /* Position the map side container relative to its parent */
+  height: 100%; /* Ensure the map side container fills the height of its parent */
+}
+

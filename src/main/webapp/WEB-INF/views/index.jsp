@@ -193,7 +193,7 @@
                     <c:forEach items="${paging.content}" var="data">
                         <div class="col-sm-6 mb-5 hover-animate" data-marker-id="${data.id}">
                             <div class="card h-100 border-0 shadow">
-                                <div class="card-img-top overflow-hidden dark-overlay bg-cover" style="background-image: url(resources/img/index/photo/restaurant-1430931071372-38127bd472b8.jpg); min-height: 200px;">
+                                <div class="card-img-top overflow-hidden dark-overlay bg-cover" style="background-image: url(${data.institution}); min-height: 200px;">
                                     <a class="tile-link" href="/detail?event_id=${data.id}"></a>
                                     <div class="card-img-overlay-bottom z-index-20">
                                         <h5 class="text-white text-shadow">${data.name}</h5>

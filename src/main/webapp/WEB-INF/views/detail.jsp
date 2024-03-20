@@ -29,7 +29,7 @@
 
 <!-- Hero Section-->
 <section class="pt-7 pb-5 d-flex align-items-end dark-overlay bg-cover"
-         style="background-image: url('resources/img/index/photo/restaurant-1515164783716-8e6920f3e77c.jpg');">
+         style="background-image: url(${festivalList.institution});">
     <div class="container overlay-content">
         <div class="d-flex justify-content-between align-items-start flex-column flex-lg-row align-items-lg-end">
             <div class="text-white mb-4 mb-lg-0">
@@ -47,8 +47,8 @@
                 </c:choose>
                 <p class="mb-0 d-flex align-items-center"><i class="fa fa-xs fa-star text-primary"></i><i
                         class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-primary"></i><i
-                        class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-gray-200 me-4"> </i>8
-                    Reviews</p>
+                        class="fa fa-xs fa-star text-primary"></i><i class="fa fa-xs fa-star text-gray-200 me-4"> </i>
+                </p>
             </div>
         </div>
     </div>
@@ -73,122 +73,70 @@
                 <div class="text-block">
                     <p class="subtitle text-sm text-primary">Reviews </p>
                     <h5 class="mb-4">Listing Reviews </h5>
-                    <div class="d-flex d-block d-sm-flex review">
-                        <div class="text-md-center flex-shrink-0 me-4 me-xl-5"><img
-                                class="d-block avatar avatar-xl p-2 mb-2" src="resources/img/index/avatar/avatar-8.jpg"
-                                alt="Padmé Amidala"><span class="text-uppercase text-muted text-sm">Dec 2018</span>
-                        </div>
-                        <div>
-                            <h6 class="mt-2 mb-1">Padmé Amidala</h6>
-                            <div class="mb-2"><i class="fa fa-xs fa-star text-primary"></i><i
-                                    class="fa fa-xs fa-star text-primary"></i><i
-                                    class="fa fa-xs fa-star text-primary"></i><i
-                                    class="fa fa-xs fa-star text-primary"></i><i
-                                    class="fa fa-xs fa-star text-primary"></i>
+                    <c:forEach items="${reviewList}" var="reviewItem">
+                        <div class="d-flex d-block d-sm-flex review">
+                            <div class="text-md-center flex-shrink-0 me-4 me-xl-5"><img
+                                    class="d-block avatar avatar-xl p-2 mb-2" src="${festivalList.institution}"
+                                    alt="Jabba Hut"><span class="text-uppercase text-muted text-sm">${reviewItem.create_date}</span></div>
+                            <div>
+                                <h6 class="mt-2 mb-1">${reviewItem.member_name}</h6>
+                                <div class="mb-2">
+                                <c:forEach begin="1" end="5" var="star">
+                                    <c:choose>
+                                        <c:when test="${star le reviewItem.review_grade}">
+                                            <i class="fa fa-xs fa-star text-primary"></i>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <i class="fa fa-xs fa-star text-gray-200"></i>
+                                        </c:otherwise>
+                                    </c:choose>
+                                </c:forEach>
+                                </div>
+                                <p class="text-muted text-sm">${reviewItem.review_field}</p>
                             </div>
-                            <p class="text-muted text-sm">One morning, when Gregor Samsa woke from troubled dreams, he
-                                found himself transformed in his bed into a horrible vermin. He lay on his armour-like
-                                back, and if he lifted his head a little he could see his brown belly, slightly domed
-                                and divided by arches into stiff sections </p>
                         </div>
-                    </div>
-                    <div class="d-flex d-block d-sm-flex review">
-                        <div class="text-md-center flex-shrink-0 me-4 me-xl-5"><img
-                                class="d-block avatar avatar-xl p-2 mb-2" src="resources/img/index/avatar/avatar-2.jpg"
-                                alt="Luke Skywalker"><span class="text-uppercase text-muted text-sm">Dec 2018</span>
-                        </div>
-                        <div>
-                            <h6 class="mt-2 mb-1">Luke Skywalker</h6>
-                            <div class="mb-2"><i class="fa fa-xs fa-star text-primary"></i><i
-                                    class="fa fa-xs fa-star text-primary"></i><i
-                                    class="fa fa-xs fa-star text-primary"></i><i
-                                    class="fa fa-xs fa-star text-primary"></i><i
-                                    class="fa fa-xs fa-star text-gray-200"></i>
-                            </div>
-                            <p class="text-muted text-sm">The bedding was hardly able to cover it and seemed ready to
-                                slide off any moment. His many legs, pitifully thin compared with the size of the rest
-                                of him, waved about helplessly as he looked. &quot;What's happened to me?&quot; he
-                                thought. It wasn't a dream. </p>
-                        </div>
-                    </div>
-                    <div class="d-flex d-block d-sm-flex review">
-                        <div class="text-md-center flex-shrink-0 me-4 me-xl-5"><img
-                                class="d-block avatar avatar-xl p-2 mb-2" src="resources/img/index/avatar/avatar-3.jpg"
-                                alt="Princess Leia"><span class="text-uppercase text-muted text-sm">Dec 2018</span>
-                        </div>
-                        <div>
-                            <h6 class="mt-2 mb-1">Princess Leia</h6>
-                            <div class="mb-2"><i class="fa fa-xs fa-star text-primary"></i><i
-                                    class="fa fa-xs fa-star text-primary"></i><i
-                                    class="fa fa-xs fa-star text-primary"></i><i
-                                    class="fa fa-xs fa-star text-gray-200"></i><i
-                                    class="fa fa-xs fa-star text-gray-200"></i>
-                            </div>
-                            <p class="text-muted text-sm">His room, a proper human room although a little too small, lay
-                                peacefully between its four familiar walls. A collection of textile samples lay spread
-                                out on the table. </p>
-                        </div>
-                    </div>
-                    <div class="d-flex d-block d-sm-flex review">
-                        <div class="text-md-center flex-shrink-0 me-4 me-xl-5"><img
-                                class="d-block avatar avatar-xl p-2 mb-2" src="resources/img/index/avatar/avatar-4.jpg"
-                                alt="Jabba Hut"><span class="text-uppercase text-muted text-sm">Dec 2018</span></div>
-                        <div>
-                            <h6 class="mt-2 mb-1">Jabba Hut</h6>
-                            <div class="mb-2"><i class="fa fa-xs fa-star text-primary"></i><i
-                                    class="fa fa-xs fa-star text-primary"></i><i
-                                    class="fa fa-xs fa-star text-primary"></i><i
-                                    class="fa fa-xs fa-star text-primary"></i><i
-                                    class="fa fa-xs fa-star text-primary"></i>
-                            </div>
-                            <p class="text-muted text-sm">Samsa was a travelling salesman - and above it there hung a
-                                picture that he had recently cut out of an illustrated magazine and housed in a nice,
-                                gilded frame. </p>
-                        </div>
-                    </div>
-                    <div class="py-5">
-                        <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#leaveReview" aria-expanded="false" aria-controls="leaveReview">Leave a
-                            review
-                        </button>
-                        <div class="collapse mt-4" id="leaveReview">
-                            <h5 class="mb-4">Leave a review</h5>
-                            <form class="form" id="contact-form" method="get" action="#">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="mb-4">
-                                            <label class="form-label" for="name">Your name *</label>
-                                            <input class="form-control" type="text" name="name" id="name"
-                                                   placeholder="Enter your name" required="required">
+                    </c:forEach>
+
+                    <%--                    로그인 세션 유지 상태일때 리뷰댓글 넣기--%>
+                    <% if (session.getAttribute("member_no") != null) { %>
+                        <div class="py-5">
+                            <button class="btn btn-outline-primary" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#leaveReview" aria-expanded="false" aria-controls="leaveReview">Leave a
+                                review
+                            </button>
+                            <div class="collapse mt-4" id="leaveReview">
+                                <h5 class="mb-4">Leave a review</h5>
+                                <form class="form" id="contact-form" method="post" action="/detail/insertReview">
+                                    <div class="row">
+                                            <%--                                    이름하고 이메일 주소 날림--%>
+                                        <div class="col-sm-6">
+                                            <div class="mb-4">
+                                                <label class="form-label" for="review_grade">Your rating *</label>
+                                                <select class="form-select focus-shadow-0" name="review_grade" id="review_grade">
+                                                    <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733; (5/5)</option>
+                                                    <option value="4">&#9733;&#9733;&#9733;&#9733;&#9734; (4/5)</option>
+                                                    <option value="3">&#9733;&#9733;&#9733;&#9734;&#9734; (3/5)</option>
+                                                    <option value="2">&#9733;&#9733;&#9734;&#9734;&#9734; (2/5)</option>
+                                                    <option value="1">&#9733;&#9734;&#9734;&#9734;&#9734; (1/5)</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-6">
-                                        <div class="mb-4">
-                                            <label class="form-label" for="rating">Your rating *</label>
-                                            <select class="form-select focus-shadow-0" name="rating" id="rating">
-                                                <option value="5">&#9733;&#9733;&#9733;&#9733;&#9733; (5/5)</option>
-                                                <option value="4">&#9733;&#9733;&#9733;&#9733;&#9734; (4/5)</option>
-                                                <option value="3">&#9733;&#9733;&#9733;&#9734;&#9734; (3/5)</option>
-                                                <option value="2">&#9733;&#9733;&#9734;&#9734;&#9734; (2/5)</option>
-                                                <option value="1">&#9733;&#9734;&#9734;&#9734;&#9734; (1/5)</option>
-                                            </select>
-                                        </div>
+                                    <!-- Hidden fields for member_no and event_no -->
+                                    <input  name="member_no" type="hidden" value="<%= session.getAttribute("member_no") %>">
+                                    <input type="hidden" name="event_no" value="${festivalList.id}">
+
+                                    <div class="mb-4">
+                                        <label class="form-label" for="review_field">Review text *</label>
+                                        <textarea class="form-control" rows="4" name="review_field" id="review_field"
+                                                  placeholder="Enter your review" required="required"></textarea>
                                     </div>
-                                </div>
-                                <div class="mb-4">
-                                    <label class="form-label" for="email">Your email *</label>
-                                    <input class="form-control" type="email" name="email" id="email"
-                                           placeholder="Enter your  email" required="required">
-                                </div>
-                                <div class="mb-4">
-                                    <label class="form-label" for="review">Review text *</label>
-                                    <textarea class="form-control" rows="4" name="review" id="review"
-                                              placeholder="Enter your review" required="required"></textarea>
-                                </div>
-                                <button class="btn btn-primary" type="submit">Post review</button>
-                            </form>
+                                    <button class="btn btn-primary" type="submit">Post review</button>
+                                </form>
+                            </div>
                         </div>
-                    </div>
+
+                    <% } %>
                 </div>
             </div>
             <div class="col-lg-4">
@@ -226,6 +174,14 @@
                                 <h6 class="mb-0 fs-sm text-uppercase">precaution</h6>
                                 <p class="mb-2 text-primary">${festivalList.precautions}</>
                             </div>
+                            <div class="mb-3 pt-3 px-2">
+                                <h6 class="mb-0 fs-sm text-uppercase"><i class="fas fa-phone"></i></h6>
+                                <p class="mb-2 text-primary">${festivalList.tel}</>
+                            </div>
+                            <div class="mb-3 pt-3 px-2">
+                                <h6 class="mb-0 fs-sm text-uppercase"><i class="fas fa-car"></i></h6>
+                                <p class="mb-2 text-primary">${festivalList.car}</>
+                            </div>
                             <div class="mb-3 pt-4 px-2">
                                 <div class="d-grid text-center"><a class="btn btn-outline-primary"
                                                                    href="${festivalList.webAddress}"> <i
@@ -255,7 +211,7 @@
                         <div class="w-100 h-100" data-marker-id="59c0c8e33b1527bfe2abaf92">
                             <div class="card h-100 border-0 shadow">
                                 <div class="card-img-top overflow-hidden dark-overlay bg-cover"
-                                     style="background-image: url(resources/img/index/photo/restaurant-1430931071372-38127bd472b8.jpg); min-height: 200px;">
+                                     style="background-image: url(${recommendItem.institution}); min-height: 200px;">
                                     <a class="tile-link" href="/detail?event_id=${recommendItem.id}"></a>
                                     <div class="card-img-overlay-bottom z-index-20">
                                         <h4 class="text-white text-shadow">${recommendItem.name}</h4>
@@ -361,5 +317,34 @@
     </script>
 
     </c:if>
+
+    <script>
+        function addVisitedPageToSession() {
+            var visitedPage = {
+                name: "${festivalList.name}", // Assuming festivalList contains the necessary page information
+                id: "${festivalList.id}"
+            };
+
+            // AJAX call to add visited page to session
+            $.ajax({
+                type: "POST",
+                url: "addVisitedPage",
+                data: JSON.stringify(visitedPage),
+                contentType: "application/json",
+                success: function(response) {
+                    console.log("Visited page added to session.");
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error adding visited page to session: " + error);
+                }
+            });
+        }
+
+        // Call the function to add visited page to session when the page loads
+        $(document).ready(function() {
+            addVisitedPageToSession();
+        });
+
+    </script>
     </body>
     </html>

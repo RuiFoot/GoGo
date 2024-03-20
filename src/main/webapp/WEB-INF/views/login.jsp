@@ -67,17 +67,12 @@
                     <p class="text-center"><small class="text-muted text-center">Don't have an account yet? <a
                             href="/signup">Sign Up </a></small></p>
                 </form>
-                <a class="close-absolute me-md-5 me-xl-6 pt-5" href="index.html">
-                    <svg class="svg-icon w-3rem h-3rem">
-                        <use xlink:href="#close-1"></use>
-                    </svg>
-                </a>
             </div>
         </div>
         <div class="col-md-4 col-lg-6 col-xl-7 d-none d-md-block">
             <!-- Image-->
             <div class="bg-cover h-100 me-n3"
-                 style="background-image: url(resources/img/index/photo/photo-1497436072909-60f360e1d4b1.jpg);"></div>
+                 style="background-image: url(resources/img/login2.png);"></div>
         </div>
     </div>
 </div>

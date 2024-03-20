@@ -41,12 +41,25 @@
         WHERE "event_no"= #{event_no}
     </select>
 
+    <select id="getReview" parameterType="String">
+        select "review_no","event_no",M."member_no","member_name","review_field","create_date","review_grade"
+        from REVIEW R, MEMBER M
+        where R."event_no" = #{event_no} and M."member_no" = R."member_no"
+        order by "create_date" DESC, "review_no" DESC
+    </select>
+
     <select id="getRecommend" parameterType="String" resultMap="festivalResultMap">
         SELECT *
         FROM DATA
         WHERE (INSTR(소재지지번주소, #{sido}) > 0 OR INSTR(소재지도로명주소, #{sido}) > 0)
 
     </select>
+
+    <!--댓글넣기-->
+    <insert id="reviewAdd" parameterType="ReviewdataVO">
+        INSERT INTO REVIEW ("review_no", "event_no", "member_no", "review_field", "create_date", "review_grade")
+        VALUES (SEQ_REVIEW_NO.NEXTVAL, #{event_no}, #{member_no}, #{review_field}, SYSDATE, #{review_grade})
+    </insert>
 
 
 </mapper>

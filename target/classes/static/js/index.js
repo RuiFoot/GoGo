@@ -38,7 +38,7 @@ var markers = [];
 
 var overlay;
 
-var size = 10;
+var size = 16;
 
 function result(data) {
 
@@ -80,7 +80,7 @@ function result(data) {
 
         var listItem = '<div class="col-sm-6 mb-5 hover-animate" data-marker-id="' + item.id + '">' +
             '<div class="card h-100 border-0 shadow">' +
-            '<div class="card-img-top overflow-hidden dark-overlay bg-cover" style="background-image: url(resources/img/index/photo/restaurant-1430931071372-38127bd472b8.jpg); min-height: 200px;">' +
+            '<div class="card-img-top overflow-hidden dark-overlay bg-cover" style="background-image: url('+item.institution+'); min-height: 200px;">' +
             '<a class="tile-link" href="/detail?event_id=' + item.id + '"></a>' +
             '<div class="card-img-overlay-bottom z-index-20">' +
             '<h5 class="text-white text-shadow">' + item.name + '</h5>' +
@@ -124,13 +124,12 @@ function result(data) {
                     '        </div>' +
                     '        <div class="body">' +
                     '            <div class="img">' +
-                    '                <img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/thumnail.png" width="73" height="70">' +
+                    '                <img src="'+item.institution+'" width="73" height="70">' +
                     '           </div>' +
                     '            <div class="desc">' +
                     '                <div class="ellipsis" style="font-weight: bold;">' + item.place + '</div>' +
                     '                <div class="ellipsis">' + item.roadAddress + '</div>' +
                     '                <div class="jibun ellipsis">' + item.numberAddress + '</div>' +
-                    '                <div><a href="' + web + '" target="_blank" class="link">홈페이지</a></div>' +
                     '            </div>' +
                     '        </div>' +
                     '    </div>' +

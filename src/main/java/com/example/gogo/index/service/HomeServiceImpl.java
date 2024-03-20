@@ -41,7 +41,24 @@ public class HomeServiceImpl implements HomeService {
         List<FestivalListVO> festivalList = homeDAO.getList(requestList);
         System.out.println("List 접근 완료");
         for (FestivalListVO festivalListVO : festivalList) {
-            System.out.println(festivalListVO.toString());
+            String category = festivalListVO.getCategory();
+            String path;
+            if (category.contains("전시회")){
+                path = "resources/img/list/fair.png";
+            } else if (category.contains("영화") || category.contains("영상")) {
+                path = "resources/img/list/movie.jpg";
+            } else if (category.contains("뮤지컬") || category.contains("연극") || category.contains("공연")) {
+                path = "resources/img/list/play.jpg";
+            } else if (category.contains("경기")) {
+                path = "resources/img/list/sport.jpg";
+            } else if (category.contains("음악") || category.contains("가요")) {
+                path = "resources/img/list/music.jpg";
+            }
+            else {
+                path = "resources/img/list/festival.png";
+            }
+            festivalListVO.setInstitution(path);
+            System.out.println(festivalListVO.getInstitution());
         }
 
         int total = homeDAO.getListCount(formDataVo);

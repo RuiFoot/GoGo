@@ -36,16 +36,16 @@
     <div class="row min-vh-100">
         <div class="col-md-8 col-lg-6 col-xl-5 d-flex align-items-center">
             <div class="w-100 py-5 px-md-5 px-xxl-6 position-relative">
-                <div class="mb-4"><img class="img-fluid mb-4" src="resources/img/logo.png" alt="..."
-                                       style="max-width: 4rem;">
+                <div class="mb-4"><a href="/"><img class="img-fluid mb-4" src="resources/img/logo.png" alt="..."
+                                                   style="max-width: 4rem;"></a>
                     <h2>회원가입</h2>
                 </div>
                 <form class="form-validate" method="post" action="/signup/addmember">
-                    <div class="mb-4">
+                    <div class="mb-4 position-relative">
                         <label class="form-label" for="loginUsername"> 이메일 주소</label>
                         <input class="form-control" name="member_email" id="member_email" type="text"
                                placeholder="기역기역@address.com" autocomplete="off">
-                        <button type="button" class="btn btn-primary" onclick="CheckByEmail()">중복 확인</button>
+                        <button type="button" class="btn btn-primary duplicate-check-btn" onclick="CheckByEmail()">중복 확인</button>
                     </div>
                     <div class="mb-4 row g-1">
                         <label class="form-label " for="loginPassword"> 비밀번호</label>
@@ -73,19 +73,20 @@
                         <label class="form-label" for="loginUsername"> 이름</label>
                         <input class="form-control" name="member_name" id="member_name" placeholder="Name" type="text">
                     </div>
-                    <div class="mb-4">
+                    <div class="mb-4 position-relative">
                         <label class="form-label" for="loginUsername"> 닉네임</label>
                         <input class="form-control" name="member_nickname" id="member_nickname" placeholder="Nickname"
                                type="text">
-                        <button type="button" class="btn btn-primary" onclick="CheckByNickname()">중복 확인</button>
+                        <button type="button" class="btn btn-primary duplicate-check-btn" onclick="CheckByNickname()">중복 확인</button>
                     </div>
-                    <div class="mb-4">
+                    <label class="form-label" for="loginUsergender"> 성별</label>
+                    <div class="mb-4 gender-container">
                         <div class="gender-box">
-                            <input type="radio" name="member_gender" value="male" required/>
+                            <input class="form-control" type="radio" name="member_gender" value="male" required/>
                             <label for="male">남성</label>
                         </div>
                         <div class="gender-box">
-                            <input type="radio" name="member_gender" value="female" required/>
+                            <input class="form-control" type="radio" name="member_gender" value="female" required/>
                             <label for="female">여성</label>
                         </div>
                     </div>
@@ -102,7 +103,7 @@
         <div class="col-md-4 col-lg-6 col-xl-7 d-none d-md-block">
             <!-- Image-->
             <div class="bg-cover h-100 me-n3"
-                 style="background-image: url(resources/img/index/photo/photo-1497436072909-60f360e1d4b1.jpg);"></div>
+                 style="background-image: url(resources/img/login2.png);"></div>
         </div>
     </div>
 </div>
@@ -257,6 +258,36 @@
             }
         });
     }
+</script>
+<script >
+    //JavaScript code to toggle gender selection
+    document.addEventListener("DOMContentLoaded", function () {
+        // Get all gender boxes
+        const genderBoxes = document.querySelectorAll('.gender-box');
+
+        // Add click event listener to each gender box
+        genderBoxes.forEach(function (box) {
+            box.addEventListener('click', function () {
+                // Deselect all other boxes
+                genderBoxes.forEach(function (otherBox) {
+                    otherBox.classList.remove('active');
+                });
+
+                // Toggle active class for clicked box
+                this.classList.toggle('active');
+
+                // Get the associated radio button
+                const radioButton = this.querySelector('input[type="radio"]');
+
+                // Check the radio button
+                radioButton.checked = true;
+            });
+        });
+    });
+
+
+
+
 </script>
 </body>
 </html>

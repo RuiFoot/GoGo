@@ -3,6 +3,8 @@
 <%@ page import="com.example.gogo.mypage.vo.MyPageVO" %>
 <%@ page import="com.example.gogo.mypage.vo.ReViewVO" %>
 <%@ page import="java.util.List" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Date" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
@@ -24,7 +26,7 @@
                 <div class="card border-0 shadow mb-6 mb-lg-0">
                     <div class="card-header bg-gray-100 py-4 border-0 text-center"><a class="d-inline-block"
                                                                                       href="#"><img
-                            class="d-block avatar avatar-xxl p-2 mb-2" src="resources/img/index/avatar/avatar-10.jpg"
+                            class="d-block avatar avatar-xxl p-2 mb-2" src="resources/img/defaultmember.png"
                             alt=""></a>
                         <h5><%= memberInfo.getMember_nickname() %>
                         </h5>
@@ -32,21 +34,21 @@
                     <div class="card-body p-4">
                         <div class="d-flex align-items-center mb-3">
                             <div class="icon-rounded icon-rounded-sm bg-primary-light flex-shrink-0 me-2">
-                                <svg class="svg-icon text-primary svg-icon-md">
-                                    <use xlink:href="#diploma-1"></use>
-                                </svg>
+                                <img src="resources/img/review.png" class="svg-icon text-primary svg-icon-md" alt="default">
                             </div>
                             <div>
-                                <p class="mb-0">2877 reviews</p>
+                                <p class="mb-0"><%= reviewInfoList.size() %> reviews</p>
                             </div>
                         </div>
                         <hr>
-                        <h6>내정보</h6>
-                        <button id="editButton" class="btn btn-sm btn-secondary" onclick="showCompleteButton()">수정하기
-                        </button>
-                        <button id="completeButton" class="btn btn-sm btn-primary" style="display: none; "
-                                onclick="showEditButton(),saveUserInfo()">완료
-                        </button>
+                        <div class="button-container" style="display: flex; justify-content: space-between; align-items: center;">
+                            <h6 style="margin: 0;">내정보</h6>
+                            <button id="editButton" class="btn btn-sm btn-secondary" onclick="showCompleteButton()">수정하기
+                            </button>
+                            <button id="completeButton" class="btn btn-sm btn-primary" style="display: none; "
+                                    onclick="showEditButton(),saveUserInfo()">완료
+                            </button>
+                        </div>
                         <table class="card-text text-muted" id="userInfoTable">
                             <tr>
                                 <td class="border-0 text-muted py-1 px-0">이름</td>
@@ -59,8 +61,14 @@
                                 </td>
                             </tr>
                             <tr>
+                                <%
+                                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                                    Date birthDate = sdf.parse(memberInfo.getMember_birth());
+                                    SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd");
+                                    String formattedBirthDate = outputFormat.format(birthDate);
+                                %>
                                 <td class="border-0 text-muted py-1 px-0">생년월일</td>
-                                <td class="border-0 text-dark fw-medium py-1 ps-3"><%= memberInfo.getMember_birth() %>
+                                <td class="border-0 text-dark fw-medium py-1 ps-3"><%= formattedBirthDate %>
                                 </td>
                             </tr>
                             <tr>
@@ -91,50 +99,58 @@
                 </div>
             </div>
             <div class="col-lg-9 ps-lg-5">
-                <h1 class="hero-heading mb-0">안녕하세요,<%= memberInfo.getMember_nickname() %>!</h1>
+                <h1 class="hero-heading mb-0">안녕하세요,<%= memberInfo.getMember_nickname() %>님!</h1>
                 <div class="text-block">
                     <p><span class="badge badge-secondary-light">Joined in 2024</span></p>
-                    <p class="text-muted"> 일단 임시로 있음 자기소개인데 인삿말이나 다른사용자가 방문안할꺼면 굳이? 아니면 메모장역할 근데 그것도 필요한가? 기능나중에
-                        넣을때쓰자 </p>
+                    <h6>오늘 방문한 페이지:</h6>
+                    <ul>
+                        <c:set var="count" value="0" />
+                        <c:forEach items="${visitedPagesList}" var="page">
+                            <c:if test="${count lt 5}">
+                                <c:if test="${!visitedPages.contains(page.id)}">
+                                    <li><a href="/detail?event_id=${page.id}">${page.name}</a></li>
+                                    <c:set var="count" value="${count + 1}" />
+                                </c:if>
+                            </c:if>
+                        </c:forEach>
+                    </ul>
                 </div>
 
                 <div class="text-block">
                     <p class="subtitle text-sm text-primary">리뷰</p>
                     <h5 class="mb-4">내가 쓴 리뷰 </h5>
-
-                    <%-- 리뷰 목록 반복 출력 --%>
-                    <% for (ReViewVO review : reviewInfoList) { %>
-                    <div class="d-flex d-block d-sm-flex review">
-                        <div class="text-md-center flex-shrink-0 me-4 me-xl-5"><img
-                                class="d-block avatar avatar-xl p-2 mb-2" src="resources/img/index/avatar/avatar-8.jpg"
-                                alt="Padmé Amidala">
-                            <span class="text-uppercase text-muted text-sm"><%= review.getCreate_date() %></span></div>
-                        <div>
-                            <h6 class="mt-2 mb-1"><%= review.get행사명() %>
-                            </h6>
-                            <%
-                                int reviewGrade = Integer.parseInt(review.getReview_grade());
-                                for (int i = 0; i < reviewGrade; i++) {
-                            %>
-                            <i class="fa fa-star text-primary"></i>
-
-                            <% } %>
-
-                            <%
-                                for (int i = 0; i < 5 - reviewGrade; i++) {
-                            %>
-                            <i class="fa fa-star text-gray-300"></i>
-                            <% } %>
-                            <p class="text-muted text-sm"><%= review.getReview_field() %>
-                            </p>
+                    <div class="row">
+                        <% if (reviewInfoList.isEmpty()) { %>
+                        <p>여행에 참여하고 리뷰를 작성해보세요.</p>
+                        <% } else { %>
+                        <% for (ReViewVO review : reviewInfoList) { %>
+                        <div class="d-flex d-block d-sm-flex review">
+                            <div class="text-md-center flex-shrink-0 me-4 me-xl-5">
+                                <a href="/detail?event_id=<%= review.getEvent_no() %>">
+                                    <img class="d-block avatar avatar-xl p-2 mb-2" src="resources/img/index/photo/restaurant-1430931071372-38127bd472b8.jpg" alt="dd">
+                                </a>
+                                <span class="text-uppercase text-muted text-sm"><%= review.getCreate_date() %></span>
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <h6 class="mt-2 mb-1 card-title"><%= review.get행사명() %></h6>
+                                    <% int reviewGrade = Integer.parseInt(review.getReview_grade()); %>
+                                    <div class="review-stars">
+                                        <% for (int i = 0; i < reviewGrade; i++) { %>
+                                        <i class="fa fa-star text-primary"></i>
+                                        <% } %>
+                                        <% for (int i = 0; i < 5 - reviewGrade; i++) { %>
+                                        <i class="fa fa-star text-gray-300"></i>
+                                        <% } %>
+                                    </div>
+                                    <p class="text-muted text-sm"><%= review.getReview_field() %></p>
+                                </div>
+                            </div>
                         </div>
+                        <% } %>
+                        <% } %>
                     </div>
                 </div>
-                <% } %>
-            </div>
-        </div>
-    </div>
-    </div>
 </section>
     <% } %>
 

@@ -69,8 +69,9 @@ public class HomeController {
             formDataVo.setSigungu("all");
         }
         System.out.println(formDataVo);
-        System.out.println(pageable);
         Page<?> paging = homeServiceImpl.getList(formDataVo, pageable);
+
+
         return ResponseEntity.ok(paging);
 
     }
